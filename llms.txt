@@ -1,0 +1,18 @@
+# HomeSurvey.ai — Product Updates
+
+> AI-powered virtual moving survey platform. This site hosts product announcements, feature releases, improvements, and fixes.
+
+## Main Site
+- [HomeSurvey.ai](https://homesurvey.ai): AI-powered virtual moving surveys — from video walkthrough to estimate-ready inventory in under 30 minutes.
+
+## Product Updates
+
+- [All Updates](https://updates.homesurvey.ai/): Searchable, filterable listing of all product announcements. Supports keyword search and article type filtering (Feature, Improvement, Fix, Integration).
+
+- [Voice Notes with Auto Exclude](https://updates.homesurvey.ai/articles/voice-notes-auto-exclude/): New Feature — during the video walkthrough, customers speak naturally about what stays and goes. The AI transcribes, classifies (GOES/STAYS/DISPOSE), and auto-excludes items. 8 note types, alias-aware matching, confidence scoring, blanket statement handling, silence detection.
+
+- [Interactive AI Move Summary](https://updates.homesurvey.ai/articles/interactive-ai-move-summary/): New Feature — AI generates a complete move playbook with crew size scenarios, truck counts, pack/load/unload hours, risk flags, and estimator tips. Recalculate button recomputes estimates from live inventory edits with transparent assumptions.
+
+## More Information
+- [How It Works](https://homesurvey.ai/how-it-works/): Step-by-step walkthrough of the HomeSurvey.ai process.
+- [Full LLM Context](https://updates.homesurvey.ai/llms-full.txt): Detailed feature descriptions for each product update.

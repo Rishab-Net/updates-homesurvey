@@ -1,0 +1,70 @@
+# HomeSurvey.ai — Product Updates (Full Context)
+
+> AI-powered virtual moving survey platform. This document provides detailed context on every product update for LLM consumption.
+
+## About HomeSurvey.ai
+HomeSurvey.ai is an AI-powered virtual home survey platform for the moving industry. Customers record short room-by-room videos, and the AI builds a complete, estimate-ready inventory — detecting 2,000+ item types, estimating weight, volume, and packing needs. Sales reps review on an interactive dashboard with photo/video evidence. The entire process takes under 30 minutes from link to estimate-ready inventory.
+
+---
+
+## Feature: Voice Notes with Auto Exclude
+**Released:** March 27, 2026
+**Type:** New Feature
+
+### Overview
+Voice Notes with Auto Exclude processes audio from the customer's video walkthrough to identify which items are moving and which are staying. The AI transcribes speech, matches statements to inventory items, classifies intent, and auto-excludes items marked as STAYS or DISPOSE.
+
+### How It Works
+1. Customer speaks naturally during the video walkthrough. Audio is captured from the video file — no separate recording needed.
+2. AI processes the video with the full inventory item list, using alias-aware matching to connect spoken words to detected items.
+3. Each statement is classified into one of 8 note types: GOES, STAYS, DISPOSE, GOES_TO_STORAGE, GOES_TO_DESTINATION, INSTRUCTION, INFO, or blanket category statements.
+4. Items classified as STAYS or DISPOSE are auto-excluded: qty_ship set to 0, qty_excl set to full quantity, voice-note badge applied.
+5. Rep reviews with full transparency: color-coded badges, confidence scores, timestamps, and an auto-exclude toggle.
+
+### Key Capabilities
+- **8 Note Types:** GOES, STAYS, DISPOSE, GOES_TO_STORAGE, GOES_TO_DESTINATION, INSTRUCTION, INFO, and blanket category statements.
+- **Alias-Aware Matching:** "Love seat" maps to Sofa 2-Seater. "Fridge" maps to Refrigerator. Hundreds of built-in aliases.
+- **Blanket Statements:** "Everything else stays" or "Only the beds go" creates inferred exclusions for all unmentioned items. Inferred items visually distinguished from explicit ones.
+- **Confidence Scoring:** 0 to 1.0 per match. Low-confidence matches highlighted for manual review.
+- **Silence Detection:** If video audio is silent or ambient noise only, voice note processing is skipped to prevent hallucinated matches.
+- **Conflict Resolution:** If an item has both GOES and STAYS notes, GOES wins (item ships). Prevents accidental exclusions.
+- **Override & Toggle:** Rep can toggle auto-exclude on/off globally or override individual items. Dashboard distinguishes auto vs. manual exclusions.
+- **Auditable:** Each exclusion links to the customer's exact words with a timestamp into the video.
+
+### Business Outcomes
+- Reps skip items the customer already excluded — in a 45-room survey, 193 items (1,418 cu ft) auto-excluded from voice notes alone.
+- Move-day variance drops: voice-note exclusions are compared against actual inventory during crew audit.
+- Every exclusion is auditable with timestamps and customer's own words, reducing disputes.
+
+---
+
+## Feature: Interactive AI Move Summary
+**Released:** April 3, 2026
+**Type:** New Feature
+
+### Overview
+The Interactive AI Move Summary generates a complete move playbook after inventory consolidation. It includes crew size recommendations with three scenarios, truck counts, pack/load/unload hour estimates, risk flags, estimator tips, and room-by-room summaries. The Recalculate feature recomputes estimates from live inventory edits.
+
+### How It Works
+1. After consolidation, the AI analyzes the full inventory: shipped items, excluded items, carton counts (CP vs PBO), handling tags, voice-note exclusions, and questionnaire responses.
+2. AI generates a structured summary: move scope bullets, estimator tips, customer priorities, risk flags, room summaries, and a crew-and-duration playbook.
+3. Rep opens the Move Summary overlay from the dashboard header. Sections include complexity score gauge (1-10), condition badges, volume breakdowns, and the Move Day Playbook.
+4. When rep edits inventory (adding/removing items, changing quantities, reassigning cartons), they click Recalculate to recompute crew hours and truck counts from live data.
+5. All assumptions are transparent and visible: base rates, multipliers, penalties, and truck capacity.
+
+### Key Capabilities
+- **3 Crew Scenarios:** Recommended crew size +/- 1. Each scenario shows separate pack, load, and unload hours.
+- **Live Recalculate:** One click recomputes from current inventory. Reads live volume, 2-man count, specialty count, CP/PBO carton breakdown.
+- **Risk Flags:** AI-generated warnings: extreme volume, high 2-man density, stairs + long carry compounding, shuttle requirements.
+- **Estimator Tips:** Actionable, move-specific advice. "Plan for multi-day load with 6+ crew." "Safe in laundry room requires specialized equipment."
+- **Room Summaries:** Per-room content summaries with notable items, handling requirements, and estimator notes.
+- **Transparent Assumptions:** Every rate visible: packing rate (cu ft/person-hr), loading rate, 2-man penalty (minutes), stairs multiplier, long-carry multiplier, specialty penalty, carton packing time, truck capacity.
+- **Customer Summary:** 6-10 bullet customer-facing summary addressing the customer in 2nd person.
+- **Pro-Gear Summary:** (Military moves) M-PRO/S-PRO breakdown with weights vs. allowances.
+- **Reset to Original:** Revert recalculated values back to the AI's original model at any time.
+
+### Business Outcomes
+- Three crew scenarios let estimators compare labor costs instantly — a recent 8,800+ cu ft move showed 66 hours (5 crew) vs. 47 hours (7 crew).
+- Risk flags surface before the quote goes out, preventing underestimates.
+- Estimates stay accurate as inventory changes — no manual spreadsheet recalculation needed.
+- Transparent assumptions let operations teams audit and adjust the estimation model.

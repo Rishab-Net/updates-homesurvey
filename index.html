@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Updates — HomeSurvey.ai</title>
+    <meta name="description" content="The latest features, improvements, and fixes from HomeSurvey.ai. See what's new in AI-powered virtual moving surveys.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/">
+    <meta property="og:title" content="Product Updates — HomeSurvey.ai">
+    <meta property="og:description" content="The latest features, improvements, and fixes from HomeSurvey.ai.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://updates.homesurvey.ai/">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-dark: #1E1145;
+            --bg-secondary: #F4F4F7;
+            --text: #4A5565;
+            --text-primary: #101828;
+            --primary: #7C3AED;
+            --primary-dark: #5B21B6;
+            --secondary: #F59E0B;
+            --radius: 16px;
+            --radius-sm: 12px;
+            --shadow: 0 4px 24px rgba(13, 42, 92, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ── Header ── */
+        .site-header {
+            background: var(--bg-dark);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header .logo {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .site-header .logo span { color: var(--secondary); }
+        .site-header .back-link {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .site-header .back-link:hover { color: #fff; }
+
+        /* ── Hero ── */
+        .updates-hero {
+            background: var(--bg-dark);
+            color: #fff;
+            text-align: center;
+            padding: 48px 24px 56px;
+        }
+        .updates-hero h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .updates-hero p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* ── Controls ── */
+        .controls {
+            max-width: 800px;
+            margin: -28px auto 0;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+        .controls-inner {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 14px 10px 40px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box input:focus { border-color: var(--primary); }
+        .search-box svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: #94a3b8;
+        }
+        .filter-pills {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .filter-pill {
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1.5px solid #e2e8f0;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .filter-pill:hover { border-color: var(--primary); color: var(--primary); }
+        .filter-pill.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .filter-pill[data-type="Feature"].active { background: var(--primary); border-color: var(--primary); }
+        .filter-pill[data-type="Improvement"].active { background: #2563EB; border-color: #2563EB; }
+        .filter-pill[data-type="Fix"].active { background: #16A34A; border-color: #16A34A; }
+        .filter-pill[data-type="Integration"].active { background: #EA580C; border-color: #EA580C; }
+
+        /* ── Article List ── */
+        .article-list {
+            max-width: 800px;
+            margin: 32px auto 64px;
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .article-card {
+            background: #fff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            transition: all 0.2s;
+            cursor: pointer;
+            display: block;
+        }
+        .article-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
+            transform: translateY(-2px);
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .type-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #fff;
+        }
+        .type-badge.Feature { background: var(--primary); }
+        .type-badge.Improvement { background: #2563EB; }
+        .type-badge.Fix { background: #16A34A; }
+        .type-badge.Integration { background: #EA580C; }
+        .article-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        .article-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+        .article-card .tagline {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .no-results {
+            text-align: center;
+            padding: 48px 24px;
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 32px 24px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .site-footer a { color: var(--primary); }
+
+        @media (max-width: 640px) {
+            .controls-inner { flex-direction: column; }
+            .search-box { min-width: unset; width: 100%; }
+            .article-card { padding: 18px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="https://homesurvey.ai"><img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="https://homesurvey.ai">&larr; Back to HomeSurvey.ai</a>
+</header>
+
+<section class="updates-hero">
+    <h1>Product Updates</h1>
+    <p>The latest features, improvements, and fixes from HomeSurvey.ai.</p>
+</section>
+
+<div class="controls">
+    <div class="controls-inner">
+        <div class="search-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+            <input type="text" id="searchInput" placeholder="Search updates..." autocomplete="off">
+        </div>
+        <div class="filter-pills">
+            <button class="filter-pill active" data-type="All">All</button>
+            <button class="filter-pill" data-type="Feature">Feature</button>
+            <button class="filter-pill" data-type="Improvement">Improvement</button>
+            <button class="filter-pill" data-type="Fix">Fix</button>
+            <button class="filter-pill" data-type="Integration">Integration</button>
+        </div>
+    </div>
+</div>
+
+<div class="article-list" id="articleList"></div>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+<script>
+(function() {
+    let articles = [];
+    let activeType = 'All';
+    let searchQuery = '';
+
+    function formatDate(isoStr) {
+        const d = new Date(isoStr);
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function render() {
+        const list = document.getElementById('articleList');
+        const q = searchQuery.toLowerCase().trim();
+
+        // Filter: only published articles
+        let filtered = articles.filter(a => a.published === true);
+
+        // Filter: only articles with publishedAt in the past or now
+        const now = new Date();
+        filtered = filtered.filter(a => new Date(a.publishedAt) <= now);
+
+        // Filter by type
+        if (activeType !== 'All') {
+            filtered = filtered.filter(a => a.type === activeType);
+        }
+
+        // Filter by search
+        if (q) {
+            filtered = filtered.filter(a => {
+                const haystack = [a.title, a.tagline, a.summary, a.type, ...a.keywords].join(' ').toLowerCase();
+                return q.split(/\s+/).every(word => haystack.includes(word));
+            });
+        }
+
+        // Sort by date descending
+        filtered.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
+        if (filtered.length === 0) {
+            list.innerHTML = '<div class="no-results">No updates found matching your search.</div>';
+            return;
+        }
+
+        list.innerHTML = filtered.map(a => `
+            <a class="article-card" href="articles/${a.slug}.html">
+                <div class="article-meta">
+                    <span class="type-badge ${a.type}">${a.type === 'Feature' ? 'New Feature' : a.type}</span>
+                    <span class="article-date">${formatDate(a.publishedAt)}</span>
+                </div>
+                <h2>${a.title}</h2>
+                <p class="tagline">${a.tagline}</p>
+            </a>
+        `).join('');
+    }
+
+    // Load articles
+    fetch('articles/articles.json')
+        .then(r => r.json())
+        .then(data => { articles = data; render(); })
+        .catch(() => {
+            document.getElementById('articleList').innerHTML = '<div class="no-results">Unable to load updates.</div>';
+        });
+
+    // Search
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        searchQuery = e.target.value;
+        render();
+    });
+
+    // Filter pills
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+        pill.addEventListener('click', function() {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            activeType = this.dataset.type;
+            render();
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
