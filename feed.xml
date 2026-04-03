@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Product Updates — HomeSurvey.ai</title>
+    <link>https://updates.homesurvey.ai/</link>
+    <description>The latest features, improvements, and fixes from HomeSurvey.ai. See what's new in AI-powered virtual moving surveys.</description>
+    <language>en-us</language>
+    <atom:link href="https://updates.homesurvey.ai/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 03 Apr 2026 14:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>Interactive AI Move Summary</title>
+      <link>https://updates.homesurvey.ai/articles/interactive-ai-move-summary/</link>
+      <guid isPermaLink="true">https://updates.homesurvey.ai/articles/interactive-ai-move-summary/</guid>
+      <pubDate>Fri, 03 Apr 2026 14:00:00 +0000</pubDate>
+      <description>The AI generates a complete move playbook — crew size scenarios, truck counts, packing hours, risk flags, and estimator tips. Edit the inventory and hit Recalculate to see updated estimates instantly.</description>
+      <category>Feature</category>
+    </item>
+
+    <item>
+      <title>Voice Notes with Auto Exclude</title>
+      <link>https://updates.homesurvey.ai/articles/voice-notes-auto-exclude/</link>
+      <guid isPermaLink="true">https://updates.homesurvey.ai/articles/voice-notes-auto-exclude/</guid>
+      <pubDate>Fri, 27 Mar 2026 14:00:00 +0000</pubDate>
+      <description>During the video walkthrough, customers speak naturally about what stays and what goes. The AI transcribes, classifies, and auto-excludes items from the inventory — saving reps significant review time.</description>
+      <category>Feature</category>
+    </item>
+
+  </channel>
+</rss>
