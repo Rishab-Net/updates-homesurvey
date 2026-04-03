@@ -229,12 +229,12 @@ a:hover { color: var(--primary-dark); text-decoration: underline; }
 .cta-band h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff !important;
     margin-bottom: 8px;
     position: relative;
 }
 .cta-band p {
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.85) !important;
     margin-bottom: 20px;
     font-size: 0.95rem;
     max-width: 480px;
