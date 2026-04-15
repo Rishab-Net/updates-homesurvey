@@ -7,8 +7,38 @@ HomeSurvey.ai is an AI-powered virtual home survey platform for the moving indus
 
 ---
 
+## Feature: Custom Questionnaire
+**Released:** April 7, 2026
+**Type:** New Feature
+
+### Overview
+Custom Questionnaire lets movers configure pre-survey questions that customers answer before or during their video walkthrough. Questions are tailored by move type and support branching logic (conditional follow-ups).
+
+### How It Works
+1. Admin configures questions in the portal, selecting move type, placement (pre-capture, after-capture, per-room, post-survey), field type, and branching rules.
+2. Customer answers questions when they open their survey link. Questions appear based on configured placement.
+3. Responses are flattened into pipeline hints (has_piano, origin_floor, pro_gear_flag, etc.) and passed to the AI during video analysis.
+4. After inventory generation, a cross-validator compares customer answers against AI detections. Matches, mismatches, and review flags surface in the dashboard.
+5. Rep sees all responses in a collapsible panel grouped by category (Access & Logistics, Special Items, Services & Preferences).
+
+### Key Capabilities
+- **12 Move Types:** Local, Intrastate, Interstate, International, Storage, Military, Commercial, Auto Transport, Senior, Student, Specialty, General.
+- **10 Field Types:** YES_NO, SINGLE_SELECT, MULTI_SELECT, TEXT, NUMBER, DATE, TIME_RANGE, PHOTO_UPLOAD, STATE_PROVINCE, COUNTRY.
+- **Branching Logic:** Follow-up questions triggered by parent answers. Supports up to 3 nesting levels. "Do you have stairs?" → "How many flights?"
+- **4 Placement Options:** PRE_CAPTURE, AFTER_CAPTURE, PER_ROOM (filtered by room type), POST_SURVEY.
+- **Cross-Validation:** AI compares customer-reported items against video detections. Severity levels: confirmed, info, review, mismatch.
+- **Military Pro-Gear:** Dedicated PBP&E section (questions PG1-PG23) with weight tracking against regulatory limits (2,000 lbs member / 500 lbs spouse).
+- **Abandonment Handling:** Partial answers stored and passed through pipeline if customer closes mid-questionnaire.
+
+### Business Outcomes
+- Special items (pianos, safes, firearms, high-value items) flagged before AI runs, improving detection accuracy.
+- Access details (floor, stairs, elevator, long carry) captured upfront, eliminating move-day surprises.
+- Cross-validation catches discrepancies between customer claims and video evidence before the quote goes out.
+
+---
+
 ## Feature: Voice Notes with Auto Exclude
-**Released:** March 27, 2026
+**Released:** March 31, 2026
 **Type:** New Feature
 
 ### Overview
@@ -39,7 +69,7 @@ Voice Notes with Auto Exclude processes audio from the customer's video walkthro
 ---
 
 ## Feature: Interactive AI Move Summary
-**Released:** April 3, 2026
+**Released:** April 2, 2026
 **Type:** New Feature
 
 ### Overview
@@ -53,7 +83,7 @@ The Interactive AI Move Summary generates a complete move playbook after invento
 5. All assumptions are transparent and visible: base rates, multipliers, penalties, and truck capacity.
 
 ### Key Capabilities
-- **3 Crew Scenarios:** Recommended crew size +/- 1. Each scenario shows separate pack, load, and unload hours.
+- **3 Crew Scenarios:** Recommended crew size ± 1. Each scenario shows separate pack, load, and unload hours.
 - **Live Recalculate:** One click recomputes from current inventory. Reads live volume, 2-man count, specialty count, CP/PBO carton breakdown.
 - **Risk Flags:** AI-generated warnings: extreme volume, high 2-man density, stairs + long carry compounding, shuttle requirements.
 - **Estimator Tips:** Actionable, move-specific advice. "Plan for multi-day load with 6+ crew." "Safe in laundry room requires specialized equipment."
