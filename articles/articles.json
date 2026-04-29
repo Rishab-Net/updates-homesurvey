@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "sample-survey-report",
+    "title": "Inside a Real HomeSurvey.ai Report",
+    "tagline": "13 rooms. 126 items. 111 cartons. See exactly what lands in your dashboard after a customer completes a walkthrough.",
+    "type": "Sample",
+    "publishedAt": "2026-04-29T10:00:00-04:00",
+    "published": true,
+    "keywords": ["sample", "report", "survey", "demo", "example", "inventory", "cartons", "rooms", "flags", "AI notes", "voice notes", "real", "residential", "walkthrough"],
+    "summary": "A real residential survey report — redacted for privacy — showing 13 rooms, 126 shipped items, 111 cartons, AI-generated handling flags, room photos, and natural-language room notes. Browse all 19 pages inline."
+  },
+  {
+    "slug": "custom-questionnaire",
+    "title": "Custom Questionnaire",
+    "tagline": "Capture customer context before the AI even starts.",
+    "type": "Feature",
+    "publishedAt": "2026-04-07T10:00:00-04:00",
+    "published": false,
+    "keywords": ["questionnaire", "questions", "branching", "move type", "custom", "survey", "pre-survey", "military", "pro-gear", "PBP&E", "context", "logistics"],
+    "summary": "Let movers configure general or move-type-specific pre-survey questions with branching logic. Customer answers flow into the AI pipeline, flag special items early, and surface in the review dashboard."
+  },
+  {
+    "slug": "voice-notes-auto-exclude",
+    "title": "Voice Notes with Auto Exclude",
+    "tagline": "\"This bookshelf stays.\" The AI listens, understands, and excludes it automatically.",
+    "type": "Feature",
+    "publishedAt": "2026-03-27T10:00:00-04:00",
+    "published": true,
+    "keywords": ["voice", "audio", "exclude", "stays", "dispose", "goes", "auto-exclude", "transcription", "speech", "video", "walkthrough", "items staying", "not moving"],
+    "summary": "During the video walkthrough, customers speak naturally about what stays and what goes. The AI transcribes, classifies, and auto-excludes items from the inventory — saving reps significant review time."
+  },
+  {
+    "slug": "interactive-ai-move-summary",
+    "title": "Interactive AI Move Summary",
+    "tagline": "From raw inventory to crew plans and truck counts — recalculated live as you edit.",
+    "type": "Feature",
+    "publishedAt": "2026-04-03T10:00:00-04:00",
+    "published": true,
+    "keywords": ["move summary", "crew", "trucks", "duration", "recalculate", "estimate", "playbook", "volume", "weight", "cartons", "risk", "tips", "interactive", "live", "scenarios"],
+    "summary": "The AI generates a complete move playbook — crew size scenarios, truck counts, packing hours, risk flags, and estimator tips. Edit the inventory and hit Recalculate to see updated estimates instantly."
+  }
+]

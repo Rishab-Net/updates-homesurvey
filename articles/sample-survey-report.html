@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside a Real HomeSurvey.ai Report — Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="A real residential survey report — 13 rooms, 126 items, 111 cartons — generated automatically from a single customer video walkthrough. See exactly what lands in your dashboard.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/sample-survey-report.html">
+    <meta property="og:title" content="Inside a Real HomeSurvey.ai Report">
+    <meta property="og:description" content="13 rooms. 126 items. 111 cartons. All generated automatically from a single video walkthrough. Browse the full report.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/sample-survey-report.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../article-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        /* ── Sample badge ── */
+        .type-badge.Sample { background: #0891B2; }
+
+        /* ── Stats strip ── */
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 32px 0 48px;
+        }
+        .stat-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 22px 16px;
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .stat-sub {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        /* ── Flag chips ── */
+        .flag-chip {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin: 2px 3px 2px 0;
+        }
+        .flag-chip.two-man  { background: #DBEAFE; color: #1D4ED8; }
+        .flag-chip.heavy    { background: #FEF3C7; color: #92400E; }
+        .flag-chip.scratch  { background: #FCE7F3; color: #9D174D; }
+        .flag-chip.dent     { background: #FEE2E2; color: #991B1B; }
+
+        /* ── PDF viewer section (wider than article body) ── */
+        .pdf-section {
+            max-width: 900px;
+            margin: 0 auto 64px;
+            padding: 0 24px;
+        }
+        .pdf-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .pdf-section-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+        .pdf-section-desc {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        /* ── PDF viewer chrome ── */
+        .pdf-viewer-wrap {
+            background: #2d2d2d;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+        }
+        .pdf-toolbar {
+            background: #1a1a1a;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .pdf-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pdf-nav-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1rem;
+            line-height: 1;
+        }
+        .pdf-nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.22); }
+        .pdf-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .pdf-page-info {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.85rem;
+            font-weight: 500;
+            min-width: 90px;
+            text-align: center;
+            font-family: 'Inter', monospace;
+        }
+        .pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--secondary);
+            color: #1E1145;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .pdf-download-btn:hover {
+            background: #D97706;
+            color: #1E1145;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .pdf-canvas-container {
+            background: #525659;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 480px;
+            position: relative;
+        }
+        #pdf-canvas {
+            max-width: 100%;
+            border-radius: 3px;
+            box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+            display: none;
+        }
+        .pdf-loading {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.9rem;
+        }
+        .pdf-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid rgba(255,255,255,0.15);
+            border-top-color: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .pdf-tip {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin-top: 10px;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Inline note callout ── */
+        .note-callout {
+            background: #F0FDF4;
+            border-left: 3px solid #16A34A;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #166534;
+            line-height: 1.6;
+        }
+        .note-callout strong { font-weight: 700; }
+
+        @media (max-width: 640px) {
+            .stats-strip { grid-template-columns: repeat(2, 1fr); }
+            .stat-num { font-size: 1.5rem; }
+            .pdf-toolbar { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="https://homesurvey.ai">
+        <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90">
+    </a>
+    <a class="back-link" href="../">&larr; All Updates</a>
+</header>
+
+<section class="article-hero">
+    <div class="meta">
+        <span class="type-badge Sample">Sample Report</span>
+        <span class="date">April 29, 2026</span>
+    </div>
+    <h1>Inside a Real HomeSurvey.ai Report</h1>
+    <p class="tagline">A real residential move. One video walkthrough. Every item flagged, every carton assigned, every room summarized — automatically.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- INTRO -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What You're Looking At</p>
+        <h2>From Video Walkthrough to Estimate-Ready Inventory</h2>
+        <p>The customer recorded a room-by-room video on their phone. No scheduled call. No app download. No surveyor on-site. Within minutes, the moving company had a complete AI-generated inventory — volume, weight, carton counts, handling flags, and a plain-English summary for every room.</p>
+        <p>This is that report. Customer and company details have been redacted. Everything else — the photos, the item flags, the carton assignments, the AI notes — is exactly as it came out of the system.</p>
+
+        <div class="stats-strip">
+            <div class="stat-card">
+                <div class="stat-num">13</div>
+                <div class="stat-label">Rooms Surveyed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">126</div>
+                <div class="stat-label">Items Shipped</div>
+                <div class="stat-sub">43 excluded via voice notes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">2,064</div>
+                <div class="stat-label">Cubic Feet</div>
+                <div class="stat-sub">14,446 lbs total weight</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">111</div>
+                <div class="stat-label">Cartons (CP)</div>
+                <div class="stat-sub">11 carton types assigned</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT TO LOOK FOR -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What to Look For</p>
+        <h2>Four Things the AI Does on Every Survey</h2>
+
+        <div class="capability-grid" style="margin-bottom:16px;">
+            <div class="capability-card">
+                <h4>📸 Room-Level Photos</h4>
+                <p>Each room section opens with a photo captured directly from the customer's video — a timestamped visual record of the space at the time of survey.</p>
+            </div>
+            <div class="capability-card">
+                <h4>🏷️ Handling Flags</h4>
+                <p>Every item is automatically tagged at the line level.
+                    <span class="flag-chip two-man">2-MAN</span>
+                    <span class="flag-chip heavy">HEAVY</span>
+                    <span class="flag-chip scratch">SCRATCH-PRONE</span>
+                    <span class="flag-chip dent">DENT-PRONE</span>
+                    No manual tagging required.
+                </p>
+            </div>
+            <div class="capability-card">
+                <h4>📝 AI Room Notes</h4>
+                <p>A natural-language summary appears at the bottom of every room — explaining what's going, what's staying, and any context the customer spoke during the walkthrough.</p>
+            </div>
+            <div class="capability-card">
+                <h4>📦 Carton Summary</h4>
+                <p>The first page shows a complete container summary: 111 carrier-packed boxes across 11 carton types, with cubic footage per type pre-calculated.</p>
+            </div>
+        </div>
+
+        <div class="note-callout">
+            <strong>Note on redaction:</strong> The customer name, email, and company name shown in this report have been replaced with generic placeholders. All inventory data, photos, flags, and AI notes are unmodified.
+        </div>
+    </div>
+
+</article>
+
+<!-- PDF VIEWER — wider than article body -->
+<section class="pdf-section">
+    <div class="section-divider"></div>
+    <p class="pdf-section-label">The Full Report</p>
+    <h2 class="pdf-section-heading">Browse All 19 Pages</h2>
+    <p class="pdf-section-desc">Use the arrow buttons or your keyboard ← → keys to page through the complete report. Download a copy using the button in the toolbar.</p>
+
+    <div class="pdf-viewer-wrap">
+        <div class="pdf-toolbar">
+            <div class="pdf-nav">
+                <button id="prev-btn" class="pdf-nav-btn" disabled aria-label="Previous page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <span id="page-info" class="pdf-page-info">Page 1 of 19</span>
+                <button id="next-btn" class="pdf-nav-btn" aria-label="Next page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <a href="../assets/survey-valley-moving-sample.pdf" download="HomeSurvey-Sample-Report.pdf" class="pdf-download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+            </a>
+        </div>
+        <div class="pdf-canvas-container">
+            <div class="pdf-loading" id="pdf-loading">
+                <div class="pdf-spinner"></div>
+                <span>Loading report&hellip;</span>
+            </div>
+            <canvas id="pdf-canvas"></canvas>
+        </div>
+    </div>
+    <p class="pdf-tip">&#8592; &#8594; arrow keys also navigate pages &nbsp;&middot;&nbsp; 19 pages total</p>
+</section>
+
+<!-- CTA -->
+<article class="article-body">
+    <div class="article-cta">
+        <h3>Ready to see your own survey look like this?</h3>
+        <p>Send your first survey in minutes. No credit card required. Pay only when you use it.</p>
+        <a href="https://go.homesurvey.ai/signup" class="btn-cta" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Start Free Trial
+        </a>
+    </div>
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const PDF_URL = '../assets/survey-valley-moving-sample.pdf';
+
+    let pdfDoc   = null;
+    let currPage = 1;
+
+    const canvas    = document.getElementById('pdf-canvas');
+    const ctx       = canvas.getContext('2d');
+    const loading   = document.getElementById('pdf-loading');
+    const pageInfo  = document.getElementById('page-info');
+    const prevBtn   = document.getElementById('prev-btn');
+    const nextBtn   = document.getElementById('next-btn');
+
+    function getScale() {
+        const container = document.querySelector('.pdf-canvas-container');
+        const available = container.clientWidth - 40; // minus padding
+        return Math.min(available / 612, 1.5);        // 612pt = standard letter width
+    }
+
+    function updateNav() {
+        prevBtn.disabled = currPage <= 1;
+        nextBtn.disabled = currPage >= pdfDoc.numPages;
+        pageInfo.textContent = 'Page ' + currPage + ' of ' + pdfDoc.numPages;
+    }
+
+    function renderPage(num) {
+        loading.style.display = 'flex';
+        canvas.style.display  = 'none';
+
+        pdfDoc.getPage(num).then(function (page) {
+            var scale    = getScale();
+            var viewport = page.getViewport({ scale: scale });
+
+            canvas.width  = viewport.width;
+            canvas.height = viewport.height;
+
+            page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
+                loading.style.display = 'none';
+                canvas.style.display  = 'block';
+                updateNav();
+            });
+        });
+    }
+
+    // Load PDF
+    pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
+        pdfDoc = pdf;
+        renderPage(currPage);
+    }).catch(function () {
+        loading.innerHTML = '<span style="color:rgba(255,255,255,0.5)">Unable to load PDF. Please use the download button above.</span>';
+    });
+
+    // Button navigation
+    prevBtn.addEventListener('click', function () {
+        if (currPage > 1) { currPage--; renderPage(currPage); }
+    });
+
+    nextBtn.addEventListener('click', function () {
+        if (pdfDoc && currPage < pdfDoc.numPages) { currPage++; renderPage(currPage); }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (!pdfDoc) return;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            if (currPage < pdfDoc.numPages) { currPage++; renderPage(currPage); }
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            if (currPage > 1) { currPage--; renderPage(currPage); }
+        }
+    });
+
+    // Re-render on resize for responsive scaling
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            if (pdfDoc) renderPage(currPage);
+        }, 200);
+    });
+}());
+</script>
+
+</body>
+</html>
