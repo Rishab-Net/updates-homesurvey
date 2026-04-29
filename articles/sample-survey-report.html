@@ -381,12 +381,70 @@
 <article class="article-body" style="max-width:720px;margin:0 auto;padding:52px 24px 32px;">
 
     <!-- What Changed -->
-    <div class="article-section" style="margin-bottom:48px;">
+    <div class="article-section" style="margin-bottom:32px;">
         <div class="divider"></div>
         <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#7C3AED;margin-bottom:8px;">What Changed</p>
         <h2 style="font-size:1.45rem;font-weight:700;color:#101828;letter-spacing:-0.02em;margin:0 0 16px;">Reports Now Include a Photo for Every Room</h2>
-        <p>Until recently, HomeSurvey.ai reports contained item inventory only &mdash; quantities, volumes, weights, and handling flags. Reports now include a room-level photo for every space captured during the walkthrough. Each photo is pulled directly from the customer&rsquo;s video and paired with the room&rsquo;s inventory table, giving your rep a visual record to reference alongside the line items.</p>
-        <p>No additional setup required. Photos are captured automatically as part of the AI processing pipeline. The report below shows what a complete output looks like today &mdash; 13 rooms, each with a timestamped photo, full item table, handling flags, and an AI-written room summary.</p>
+        <p>Reports now include a room-level photo for every space captured during the walkthrough. Each photo is pulled directly from the customer&rsquo;s video and paired with the room&rsquo;s inventory table, giving your rep a visual record to reference alongside the line items.</p>
+    </div>
+
+</article>
+
+<!-- ═══ PDF SECTION — moved up, right after intro para ═══ -->
+<section class="pdf-section" style="margin-bottom:0;padding-bottom:0;">
+    <div class="divider" style="margin-left:24px;"></div>
+    <p class="pdf-section-label" style="padding-left:24px;max-width:900px;margin-left:auto;margin-right:auto;">The Report</p>
+    <h2 class="pdf-section-heading" style="padding-left:24px;max-width:900px;margin-left:auto;margin-right:auto;">Browse All 19 Pages — Start with a Room</h2>
+    <p class="pdf-section-desc" style="padding-left:24px;max-width:900px;margin-left:auto;margin-right:auto;">We&rsquo;ve opened to page 9 so you can see a room photo in context. Use &larr; &rarr; arrow keys or the buttons to navigate. Download the full report below.</p>
+
+    <div class="pdf-viewer-wrap">
+        <!-- Toolbar -->
+        <div class="pdf-toolbar">
+            <div class="pdf-nav">
+                <button id="prev-btn" class="pdf-nav-btn" disabled aria-label="Previous page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <span id="page-info" class="pdf-page-info">Loading&hellip;</span>
+                <button id="next-btn" class="pdf-nav-btn" disabled aria-label="Next page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <a href="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
+               download="HomeSurvey-Sample-Report.pdf"
+               class="pdf-download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+            </a>
+        </div>
+
+        <!-- Canvas viewer (PDF.js) -->
+        <div class="pdf-canvas-container" id="pdf-canvas-container">
+            <div class="pdf-loading" id="pdf-loading">
+                <div class="pdf-spinner"></div>
+                <span>Loading report&hellip;</span>
+            </div>
+            <canvas id="pdf-canvas"></canvas>
+            <!-- Iframe fallback (shown if PDF.js fails) -->
+            <div id="pdf-iframe-wrap">
+                <iframe id="pdf-iframe"
+                    src="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
+                    title="HomeSurvey.ai Sample Survey Report">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <p class="pdf-tip">&#8592; &#8594; arrow keys also navigate &nbsp;&bull;&nbsp; 19 pages total</p>
+</section>
+
+<!-- ═══ ARTICLE BODY CONTINUES ═══ -->
+<article class="article-body" style="max-width:720px;margin:0 auto;padding:52px 24px 32px;">
+
+    <!-- Automatic on Every Survey -->
+    <div class="article-section" style="margin-bottom:48px;">
+        <div class="divider"></div>
+        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#7C3AED;margin-bottom:8px;">How It Works</p>
+        <h2 style="font-size:1.45rem;font-weight:700;color:#101828;letter-spacing:-0.02em;margin:0 0 16px;">Automatic on Every Survey</h2>
+        <p>No additional setup required. Photos are captured automatically as part of the AI processing pipeline. Every room in the report above includes a timestamped photo, a full item table with handling flags, and an AI-written summary of what&rsquo;s going and what&rsquo;s staying.</p>
 
         <!-- Stats strip -->
         <div class="stats-strip">
@@ -458,52 +516,6 @@
 
 </article>
 
-<!-- ═══ PDF SECTION (wider than article body) ═══ -->
-<section class="pdf-section">
-    <div class="divider"></div>
-    <p class="pdf-section-label">The Full Report</p>
-    <h2 class="pdf-section-heading">Browse All 19 Pages</h2>
-    <p class="pdf-section-desc">Use the arrow buttons or your keyboard &larr; &rarr; keys to page through. Download a copy anytime using the button in the toolbar.</p>
-
-    <div class="pdf-viewer-wrap">
-        <!-- Toolbar -->
-        <div class="pdf-toolbar">
-            <div class="pdf-nav">
-                <button id="prev-btn" class="pdf-nav-btn" disabled aria-label="Previous page">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <span id="page-info" class="pdf-page-info">Loading&hellip;</span>
-                <button id="next-btn" class="pdf-nav-btn" disabled aria-label="Next page">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-            </div>
-            <a href="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
-               download="HomeSurvey-Sample-Report.pdf"
-               class="pdf-download-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PDF
-            </a>
-        </div>
-
-        <!-- Canvas viewer (PDF.js) -->
-        <div class="pdf-canvas-container" id="pdf-canvas-container">
-            <div class="pdf-loading" id="pdf-loading">
-                <div class="pdf-spinner"></div>
-                <span>Loading report&hellip;</span>
-            </div>
-            <canvas id="pdf-canvas"></canvas>
-            <!-- Iframe fallback (shown if PDF.js fails) -->
-            <div id="pdf-iframe-wrap">
-                <iframe id="pdf-iframe"
-                    src="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
-                    title="HomeSurvey.ai Sample Survey Report">
-                </iframe>
-            </div>
-        </div>
-    </div>
-    <p class="pdf-tip">&#8592; &#8594; arrow keys also navigate &nbsp;&bull;&nbsp; 19 pages total</p>
-</section>
-
 <!-- ═══ CTA ═══ -->
 <article class="article-body" style="max-width:720px;margin:0 auto;padding:0 24px 72px;">
     <div class="cta-band">
@@ -538,7 +550,7 @@
     var container   = document.getElementById('pdf-canvas-container');
 
     var pdfDoc   = null;
-    var currPage = 1;
+    var currPage = 9;
     var rendering = false;
 
     // ── PDF.js setup ──
