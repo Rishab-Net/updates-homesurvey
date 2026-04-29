@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inside a Real HomeSurvey.ai Report — Product Updates | HomeSurvey.ai</title>
     <meta name="description" content="A real residential survey report — 13 rooms, 126 items, 111 cartons — generated automatically from a single customer video walkthrough. See exactly what lands in your dashboard.">
-    <link rel="canonical" href="https://updates.homesurvey.ai/articles/sample-survey-report.html">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/sample-survey-report/">
     <meta property="og:title" content="Inside a Real HomeSurvey.ai Report">
     <meta property="og:description" content="13 rooms. 126 items. 111 cartons. All generated automatically from a single video walkthrough. Browse the full report.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://updates.homesurvey.ai/articles/sample-survey-report.html">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/sample-survey-report/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../article-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <style>
-        /* ── Sample badge ── */
-        .type-badge.Sample { background: #0891B2; }
 
-        /* ── Stats strip ── */
+    <style>
+        /* ─── Force backgrounds regardless of CSS variable resolution ─── */
+        .site-header {
+            background-color: #1E1145 !important;
+        }
+        .article-hero {
+            background-color: #1E1145 !important;
+            color: #ffffff !important;
+        }
+        .article-hero h1 { color: #ffffff !important; }
+        .article-hero .tagline { color: rgba(255,255,255,0.75) !important; }
+        .article-hero .date { color: rgba(255,255,255,0.55) !important; }
+        .site-header .back-link { color: rgba(255,255,255,0.65) !important; }
+        .site-header .back-link:hover { color: #fff !important; }
+
+        /* ─── Sample badge ─── */
+        .type-badge.Sample {
+            background-color: #0891B2 !important;
+            color: #fff !important;
+        }
+
+        /* ─── Stats strip ─── */
         .stats-strip {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -27,48 +45,99 @@
             margin: 32px 0 48px;
         }
         .stat-card {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-sm);
+            background-color: #F4F4F7;
+            border-radius: 12px;
             padding: 22px 16px;
             text-align: center;
         }
         .stat-num {
-            font-size: 1.9rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: #101828;
             letter-spacing: -0.04em;
             line-height: 1;
             margin-bottom: 6px;
+            display: block;
         }
         .stat-label {
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4A5565;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
+            display: block;
         }
         .stat-sub {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: #94a3b8;
-            margin-top: 2px;
+            margin-top: 3px;
+            display: block;
         }
 
-        /* ── Flag chips ── */
-        .flag-chip {
+        /* ─── Feature cards grid ─── */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0;
+        }
+        .feature-card {
+            background-color: #F4F4F7;
+            border-radius: 12px;
+            padding: 22px 20px;
+            border-left: 3px solid transparent;
+        }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .feature-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #101828;
+            margin: 0 0 6px;
+        }
+        .feature-card p {
+            font-size: 0.87rem;
+            color: #4A5565;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ─── Flag chips ─── */
+        .flag {
             display: inline-block;
-            padding: 3px 10px;
+            padding: 2px 9px;
             border-radius: 50px;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 0.04em;
-            margin: 2px 3px 2px 0;
+            margin: 2px 2px 2px 0;
         }
-        .flag-chip.two-man  { background: #DBEAFE; color: #1D4ED8; }
-        .flag-chip.heavy    { background: #FEF3C7; color: #92400E; }
-        .flag-chip.scratch  { background: #FCE7F3; color: #9D174D; }
-        .flag-chip.dent     { background: #FEE2E2; color: #991B1B; }
+        .flag.two-man  { background-color: #DBEAFE; color: #1D4ED8; }
+        .flag.heavy    { background-color: #FEF3C7; color: #92400E; }
+        .flag.scratch  { background-color: #FCE7F3; color: #9D174D; }
+        .flag.dent     { background-color: #FEE2E2; color: #991B1B; }
 
-        /* ── PDF viewer section (wider than article body) ── */
+        /* ─── Redaction callout ─── */
+        .redaction-note {
+            background-color: #F0FDF4;
+            border-left: 3px solid #16A34A;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+            margin: 28px 0;
+            font-size: 0.88rem;
+            color: #166534;
+            line-height: 1.6;
+        }
+        .redaction-note strong { font-weight: 700; }
+
+        /* ─── PDF section (wider than article body) ─── */
         .pdf-section {
             max-width: 900px;
             margin: 0 auto 64px;
@@ -79,32 +148,32 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--primary);
-            margin-bottom: 8px;
+            color: #7C3AED;
+            margin-bottom: 6px;
         }
         .pdf-section-heading {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: #101828;
             letter-spacing: -0.02em;
-            margin-bottom: 10px;
+            margin: 0 0 8px;
         }
         .pdf-section-desc {
             font-size: 0.95rem;
-            color: var(--text);
-            margin-bottom: 24px;
+            color: #4A5565;
+            margin: 0 0 20px;
             line-height: 1.6;
         }
 
-        /* ── PDF viewer chrome ── */
+        /* ─── PDF viewer chrome ─── */
         .pdf-viewer-wrap {
-            background: #2d2d2d;
+            background-color: #2d2d2d;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+            box-shadow: 0 16px 56px rgba(0,0,0,0.3);
         }
         .pdf-toolbar {
-            background: #1a1a1a;
+            background-color: #1a1a1a;
             padding: 12px 20px;
             display: flex;
             align-items: center;
@@ -115,24 +184,24 @@
         .pdf-nav {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .pdf-nav-btn {
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.12);
+            background-color: rgba(255,255,255,0.1);
             border: none;
             color: #fff;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
-            font-size: 1rem;
+            transition: background 0.15s;
+            font-size: 14px;
             line-height: 1;
+            padding: 0;
         }
-        .pdf-nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.22); }
+        .pdf-nav-btn:hover:not(:disabled) { background-color: rgba(255,255,255,0.2); }
         .pdf-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
         .pdf-page-info {
             color: rgba(255,255,255,0.75);
@@ -140,13 +209,12 @@
             font-weight: 500;
             min-width: 90px;
             text-align: center;
-            font-family: 'Inter', monospace;
         }
         .pdf-download-btn {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            background: var(--secondary);
+            background-color: #F59E0B;
             color: #1E1145;
             border: none;
             padding: 9px 18px;
@@ -155,30 +223,42 @@
             font-weight: 700;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: background 0.15s, transform 0.15s;
             font-family: inherit;
         }
         .pdf-download-btn:hover {
-            background: #D97706;
-            color: #1E1145;
+            background-color: #D97706;
             text-decoration: none;
             transform: translateY(-1px);
         }
         .pdf-canvas-container {
-            background: #525659;
+            background-color: #525659;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            min-height: 480px;
+            min-height: 500px;
             position: relative;
         }
         #pdf-canvas {
             max-width: 100%;
             border-radius: 3px;
-            box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             display: none;
         }
+
+        /* Iframe fallback (shown when PDF.js fails) */
+        #pdf-iframe-wrap {
+            display: none;
+            width: 100%;
+        }
+        #pdf-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
         .pdf-loading {
             position: absolute;
             inset: 0;
@@ -186,182 +266,247 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
             color: rgba(255,255,255,0.55);
             font-size: 0.9rem;
         }
         .pdf-spinner {
-            width: 32px;
-            height: 32px;
+            width: 32px; height: 32px;
             border: 3px solid rgba(255,255,255,0.15);
-            border-top-color: rgba(255,255,255,0.7);
+            border-top-color: rgba(255,255,255,0.65);
             border-radius: 50%;
-            animation: spin 0.7s linear infinite;
+            animation: spin 0.75s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+
         .pdf-tip {
             text-align: center;
             font-size: 0.78rem;
             color: #94a3b8;
             margin-top: 10px;
-            letter-spacing: 0.01em;
         }
 
-        /* ── Inline note callout ── */
-        .note-callout {
-            background: #F0FDF4;
-            border-left: 3px solid #16A34A;
-            border-radius: 0 10px 10px 0;
-            padding: 14px 18px;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            color: #166534;
+        /* ─── Section divider ─── */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background-color: #7C3AED;
+            border-radius: 2px;
+            margin: 0 0 22px;
+        }
+
+        /* ─── CTA band ─── */
+        .cta-band {
+            background-color: #F4F4F7;
+            border-radius: 16px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 48px;
+            margin-bottom: 0;
+        }
+        .cta-band h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #101828;
+            margin: 0 0 10px;
+        }
+        .cta-band p {
+            color: #4A5565;
+            font-size: 0.95rem;
+            margin: 0 0 22px;
             line-height: 1.6;
         }
-        .note-callout strong { font-weight: 700; }
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #7C3AED;
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-start:hover {
+            background-color: #5B21B6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124,58,237,0.35);
+            text-decoration: none;
+        }
+        .btn-start svg { width: 18px; height: 18px; }
 
+        /* ─── Footer ─── */
+        .site-footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 32px 24px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .site-footer a { color: #7C3AED; text-decoration: none; }
+
+        /* ─── Responsive ─── */
         @media (max-width: 640px) {
             .stats-strip { grid-template-columns: repeat(2, 1fr); }
-            .stat-num { font-size: 1.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
             .pdf-toolbar { flex-direction: column; align-items: flex-start; }
+            .stat-num { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-<header class="site-header">
-    <a class="logo" href="https://homesurvey.ai">
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" style="background-color:#1E1145;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="https://homesurvey.ai" style="display:block;line-height:0;">
         <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90">
     </a>
-    <a class="back-link" href="../">&larr; All Updates</a>
+    <a class="back-link" href="../" style="color:rgba(255,255,255,0.65);font-size:0.875rem;text-decoration:none;font-family:inherit;">&larr; All Updates</a>
 </header>
 
-<section class="article-hero">
-    <div class="meta">
-        <span class="type-badge Sample">Sample Report</span>
-        <span class="date">April 29, 2026</span>
+<!-- ═══ HERO ═══ -->
+<section class="article-hero" style="background-color:#1E1145;color:#fff;padding:44px 24px 56px;text-align:center;">
+    <div class="meta" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;">
+        <span class="type-badge Sample" style="background-color:#0891B2;color:#fff;display:inline-block;padding:4px 14px;border-radius:50px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Sample Report</span>
+        <span style="font-size:0.85rem;color:rgba(255,255,255,0.55);">April 29, 2026</span>
     </div>
-    <h1>Inside a Real HomeSurvey.ai Report</h1>
-    <p class="tagline">A real residential move. One video walkthrough. Every item flagged, every carton assigned, every room summarized — automatically.</p>
+    <h1 style="color:#fff;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin:0 0 12px;">Inside a Real HomeSurvey.ai Report</h1>
+    <p style="color:rgba(255,255,255,0.72);font-size:1.1rem;max-width:580px;margin:0 auto;line-height:1.6;">A real residential move. One video walkthrough. Every item flagged, every carton assigned, every room summarized &mdash; automatically.</p>
 </section>
 
-<article class="article-body">
+<!-- ═══ ARTICLE BODY ═══ -->
+<article class="article-body" style="max-width:720px;margin:0 auto;padding:52px 24px 32px;">
 
-    <!-- INTRO -->
-    <div class="article-section">
-        <div class="section-divider"></div>
-        <p class="section-label">What You're Looking At</p>
-        <h2>From Video Walkthrough to Estimate-Ready Inventory</h2>
-        <p>The customer recorded a room-by-room video on their phone. No scheduled call. No app download. No surveyor on-site. Within minutes, the moving company had a complete AI-generated inventory — volume, weight, carton counts, handling flags, and a plain-English summary for every room.</p>
-        <p>This is that report. Customer and company details have been redacted. Everything else — the photos, the item flags, the carton assignments, the AI notes — is exactly as it came out of the system.</p>
+    <!-- Intro -->
+    <div class="article-section" style="margin-bottom:48px;">
+        <div class="divider"></div>
+        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#7C3AED;margin-bottom:8px;">What You&rsquo;re Looking At</p>
+        <h2 style="font-size:1.45rem;font-weight:700;color:#101828;letter-spacing:-0.02em;margin:0 0 16px;">From Video Walkthrough to Estimate-Ready Inventory</h2>
+        <p>The customer recorded a room-by-room video on their phone. No scheduled call. No app download. No surveyor on-site. Within minutes, the moving company had a complete AI-generated inventory &mdash; volume, weight, carton counts, handling flags, and a plain-English summary for every room.</p>
+        <p>This is that report. Customer and company details have been redacted. Everything else &mdash; the photos, item flags, carton assignments, and AI notes &mdash; is exactly as it came out of the system.</p>
 
+        <!-- Stats strip -->
         <div class="stats-strip">
             <div class="stat-card">
-                <div class="stat-num">13</div>
-                <div class="stat-label">Rooms Surveyed</div>
+                <span class="stat-num">13</span>
+                <span class="stat-label">Rooms Surveyed</span>
             </div>
             <div class="stat-card">
-                <div class="stat-num">126</div>
-                <div class="stat-label">Items Shipped</div>
-                <div class="stat-sub">43 excluded via voice notes</div>
+                <span class="stat-num">126</span>
+                <span class="stat-label">Items Shipped</span>
+                <span class="stat-sub">43 excluded via voice notes</span>
             </div>
             <div class="stat-card">
-                <div class="stat-num">2,064</div>
-                <div class="stat-label">Cubic Feet</div>
-                <div class="stat-sub">14,446 lbs total weight</div>
+                <span class="stat-num">2,064</span>
+                <span class="stat-label">Cubic Feet</span>
+                <span class="stat-sub">14,446 lbs total weight</span>
             </div>
             <div class="stat-card">
-                <div class="stat-num">111</div>
-                <div class="stat-label">Cartons (CP)</div>
-                <div class="stat-sub">11 carton types assigned</div>
+                <span class="stat-num">111</span>
+                <span class="stat-label">Cartons (CP)</span>
+                <span class="stat-sub">11 carton types assigned</span>
             </div>
         </div>
     </div>
 
-    <!-- WHAT TO LOOK FOR -->
-    <div class="article-section">
-        <div class="section-divider"></div>
-        <p class="section-label">What to Look For</p>
-        <h2>Four Things the AI Does on Every Survey</h2>
+    <!-- What to look for -->
+    <div class="article-section" style="margin-bottom:48px;">
+        <div class="divider"></div>
+        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#7C3AED;margin-bottom:8px;">What to Look For</p>
+        <h2 style="font-size:1.45rem;font-weight:700;color:#101828;letter-spacing:-0.02em;margin:0 0 8px;">Four Things the AI Does on Every Survey</h2>
+        <p style="margin-bottom:20px;">Each page of the report demonstrates a different layer of AI intelligence. Here&rsquo;s what to look for as you browse.</p>
 
-        <div class="capability-grid" style="margin-bottom:16px;">
-            <div class="capability-card">
-                <h4>📸 Room-Level Photos</h4>
-                <p>Each room section opens with a photo captured directly from the customer's video — a timestamped visual record of the space at the time of survey.</p>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">📸</span>
+                <h4>Room-Level Photos</h4>
+                <p>Each room section opens with a frame captured from the customer&rsquo;s video &mdash; a timestamped visual record of the space at the time of survey.</p>
             </div>
-            <div class="capability-card">
-                <h4>🏷️ Handling Flags</h4>
-                <p>Every item is automatically tagged at the line level.
-                    <span class="flag-chip two-man">2-MAN</span>
-                    <span class="flag-chip heavy">HEAVY</span>
-                    <span class="flag-chip scratch">SCRATCH-PRONE</span>
-                    <span class="flag-chip dent">DENT-PRONE</span>
-                    No manual tagging required.
-                </p>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">🏷️</span>
+                <h4>Handling Flags</h4>
+                <p>Every item is automatically tagged at the line level: <span class="flag two-man">2-MAN</span> <span class="flag heavy">HEAVY</span> <span class="flag scratch">SCRATCH-PRONE</span> <span class="flag dent">DENT-PRONE</span>. No manual entry.</p>
             </div>
-            <div class="capability-card">
-                <h4>📝 AI Room Notes</h4>
-                <p>A natural-language summary appears at the bottom of every room — explaining what's going, what's staying, and any context the customer spoke during the walkthrough.</p>
+            <div class="feature-card green">
+                <span class="feature-card-icon">📝</span>
+                <h4>AI Room Notes</h4>
+                <p>A natural-language summary at the bottom of every room explains what&rsquo;s going, what&rsquo;s staying, and any context the customer mentioned during the walkthrough.</p>
             </div>
-            <div class="capability-card">
-                <h4>📦 Carton Summary</h4>
-                <p>The first page shows a complete container summary: 111 carrier-packed boxes across 11 carton types, with cubic footage per type pre-calculated.</p>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">📦</span>
+                <h4>Carton Summary</h4>
+                <p>Page one shows 111 carrier-packed boxes across 11 carton types &mdash; Small, Medium, Large, XL, TV, Wardrobe, Dish Pack, and more &mdash; with cubic footage per type.</p>
             </div>
         </div>
 
-        <div class="note-callout">
-            <strong>Note on redaction:</strong> The customer name, email, and company name shown in this report have been replaced with generic placeholders. All inventory data, photos, flags, and AI notes are unmodified.
+        <div class="redaction-note">
+            <strong>Note on redaction:</strong> The customer name, email address, and moving company shown in this report have been replaced with generic placeholders. All inventory data, room photos, handling flags, and AI-generated notes are unmodified from the original output.
         </div>
     </div>
 
 </article>
 
-<!-- PDF VIEWER — wider than article body -->
+<!-- ═══ PDF SECTION (wider than article body) ═══ -->
 <section class="pdf-section">
-    <div class="section-divider"></div>
+    <div class="divider"></div>
     <p class="pdf-section-label">The Full Report</p>
     <h2 class="pdf-section-heading">Browse All 19 Pages</h2>
-    <p class="pdf-section-desc">Use the arrow buttons or your keyboard ← → keys to page through the complete report. Download a copy using the button in the toolbar.</p>
+    <p class="pdf-section-desc">Use the arrow buttons or your keyboard &larr; &rarr; keys to page through. Download a copy anytime using the button in the toolbar.</p>
 
     <div class="pdf-viewer-wrap">
+        <!-- Toolbar -->
         <div class="pdf-toolbar">
             <div class="pdf-nav">
                 <button id="prev-btn" class="pdf-nav-btn" disabled aria-label="Previous page">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
-                <span id="page-info" class="pdf-page-info">Page 1 of 19</span>
-                <button id="next-btn" class="pdf-nav-btn" aria-label="Next page">
+                <span id="page-info" class="pdf-page-info">Loading&hellip;</span>
+                <button id="next-btn" class="pdf-nav-btn" disabled aria-label="Next page">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
             </div>
-            <a href="../assets/survey-valley-moving-sample.pdf" download="HomeSurvey-Sample-Report.pdf" class="pdf-download-btn">
+            <a href="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
+               download="HomeSurvey-Sample-Report.pdf"
+               class="pdf-download-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download PDF
             </a>
         </div>
-        <div class="pdf-canvas-container">
+
+        <!-- Canvas viewer (PDF.js) -->
+        <div class="pdf-canvas-container" id="pdf-canvas-container">
             <div class="pdf-loading" id="pdf-loading">
                 <div class="pdf-spinner"></div>
                 <span>Loading report&hellip;</span>
             </div>
             <canvas id="pdf-canvas"></canvas>
+            <!-- Iframe fallback (shown if PDF.js fails) -->
+            <div id="pdf-iframe-wrap">
+                <iframe id="pdf-iframe"
+                    src="https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf"
+                    title="HomeSurvey.ai Sample Survey Report">
+                </iframe>
+            </div>
         </div>
     </div>
-    <p class="pdf-tip">&#8592; &#8594; arrow keys also navigate pages &nbsp;&middot;&nbsp; 19 pages total</p>
+    <p class="pdf-tip">&#8592; &#8594; arrow keys also navigate &nbsp;&bull;&nbsp; 19 pages total</p>
 </section>
 
-<!-- CTA -->
-<article class="article-body">
-    <div class="article-cta">
+<!-- ═══ CTA ═══ -->
+<article class="article-body" style="max-width:720px;margin:0 auto;padding:0 24px 72px;">
+    <div class="cta-band">
         <h3>Ready to see your own survey look like this?</h3>
         <p>Send your first survey in minutes. No credit card required. Pay only when you use it.</p>
-        <a href="https://go.homesurvey.ai/signup" class="btn-cta" rel="noopener noreferrer">
+        <a href="https://go.homesurvey.ai/signup" class="btn-start" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             Start Free Trial
         </a>
     </div>
 </article>
 
+<!-- ═══ FOOTER ═══ -->
 <footer class="site-footer">
     &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
 </footer>
@@ -370,36 +515,50 @@
 (function () {
     'use strict';
 
+    // ── Absolute URL avoids relative-path issues under Vercel clean URLs ──
+    var PDF_URL = 'https://updates.homesurvey.ai/assets/survey-valley-moving-sample.pdf';
+
+    var canvas      = document.getElementById('pdf-canvas');
+    var ctx         = canvas ? canvas.getContext('2d') : null;
+    var loadingEl   = document.getElementById('pdf-loading');
+    var pageInfo    = document.getElementById('page-info');
+    var prevBtn     = document.getElementById('prev-btn');
+    var nextBtn     = document.getElementById('next-btn');
+    var iframeWrap  = document.getElementById('pdf-iframe-wrap');
+    var container   = document.getElementById('pdf-canvas-container');
+
+    var pdfDoc   = null;
+    var currPage = 1;
+    var rendering = false;
+
+    // ── PDF.js setup ──
+    if (typeof pdfjsLib === 'undefined') {
+        showIframeFallback();
+        return;
+    }
+
     pdfjsLib.GlobalWorkerOptions.workerSrc =
         'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-    const PDF_URL = '../assets/survey-valley-moving-sample.pdf';
-
-    let pdfDoc   = null;
-    let currPage = 1;
-
-    const canvas    = document.getElementById('pdf-canvas');
-    const ctx       = canvas.getContext('2d');
-    const loading   = document.getElementById('pdf-loading');
-    const pageInfo  = document.getElementById('page-info');
-    const prevBtn   = document.getElementById('prev-btn');
-    const nextBtn   = document.getElementById('next-btn');
-
     function getScale() {
-        const container = document.querySelector('.pdf-canvas-container');
-        const available = container.clientWidth - 40; // minus padding
-        return Math.min(available / 612, 1.5);        // 612pt = standard letter width
+        if (!container) return 1.2;
+        var w = container.clientWidth - 40;
+        return Math.min(w / 612, 1.6);
     }
 
     function updateNav() {
+        if (!pdfDoc) return;
         prevBtn.disabled = currPage <= 1;
         nextBtn.disabled = currPage >= pdfDoc.numPages;
         pageInfo.textContent = 'Page ' + currPage + ' of ' + pdfDoc.numPages;
     }
 
     function renderPage(num) {
-        loading.style.display = 'flex';
-        canvas.style.display  = 'none';
+        if (rendering || !pdfDoc) return;
+        rendering = true;
+
+        if (loadingEl) { loadingEl.style.display = 'flex'; }
+        if (canvas)    { canvas.style.display = 'none'; }
 
         pdfDoc.getPage(num).then(function (page) {
             var scale    = getScale();
@@ -408,34 +567,69 @@
             canvas.width  = viewport.width;
             canvas.height = viewport.height;
 
-            page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
-                loading.style.display = 'none';
-                canvas.style.display  = 'block';
-                updateNav();
-            });
+            page.render({ canvasContext: ctx, viewport: viewport }).promise
+                .then(function () {
+                    rendering = false;
+                    if (loadingEl) { loadingEl.style.display = 'none'; }
+                    canvas.style.display = 'block';
+                    updateNav();
+                })
+                .catch(function () {
+                    rendering = false;
+                    showIframeFallback();
+                });
+        }).catch(function () {
+            rendering = false;
+            showIframeFallback();
         });
     }
 
-    // Load PDF
-    pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
-        pdfDoc = pdf;
-        renderPage(currPage);
-    }).catch(function () {
-        loading.innerHTML = '<span style="color:rgba(255,255,255,0.5)">Unable to load PDF. Please use the download button above.</span>';
-    });
+    function showIframeFallback() {
+        if (loadingEl)   { loadingEl.style.display = 'none'; }
+        if (canvas)      { canvas.style.display = 'none'; }
+        if (iframeWrap)  { iframeWrap.style.display = 'block'; }
+        if (pageInfo)    { pageInfo.textContent = 'Use PDF controls below'; }
+        if (prevBtn)     { prevBtn.style.display = 'none'; }
+        if (nextBtn)     { nextBtn.style.display = 'none'; }
+        // Remove min-height constraint so iframe dictates height
+        if (container)   { container.style.minHeight = '0'; container.style.padding = '0'; }
+    }
 
-    // Button navigation
-    prevBtn.addEventListener('click', function () {
-        if (currPage > 1) { currPage--; renderPage(currPage); }
-    });
+    // ── Load PDF ──
+    pdfjsLib.getDocument({
+        url: PDF_URL,
+        cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+        cMapPacked: true
+    }).promise
+        .then(function (pdf) {
+            pdfDoc = pdf;
+            renderPage(currPage);
+        })
+        .catch(function () {
+            showIframeFallback();
+        });
 
-    nextBtn.addEventListener('click', function () {
-        if (pdfDoc && currPage < pdfDoc.numPages) { currPage++; renderPage(currPage); }
-    });
+    // ── Button navigation ──
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            if (currPage > 1 && !rendering) {
+                currPage--;
+                renderPage(currPage);
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            if (pdfDoc && currPage < pdfDoc.numPages && !rendering) {
+                currPage++;
+                renderPage(currPage);
+            }
+        });
+    }
 
-    // Keyboard navigation
+    // ── Keyboard navigation ──
     document.addEventListener('keydown', function (e) {
-        if (!pdfDoc) return;
+        if (!pdfDoc || rendering) return;
         if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
             if (currPage < pdfDoc.numPages) { currPage++; renderPage(currPage); }
         } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
@@ -443,16 +637,16 @@
         }
     });
 
-    // Re-render on resize for responsive scaling
+    // ── Responsive re-render on resize ──
     var resizeTimer;
     window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
-            if (pdfDoc) renderPage(currPage);
-        }, 200);
+            if (pdfDoc && !rendering) renderPage(currPage);
+        }, 250);
     });
+
 }());
 </script>
-
 </body>
 </html>
