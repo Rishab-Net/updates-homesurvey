@@ -14,6 +14,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../article-styles.css">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        /* Hero */
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 640px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        /* Badge */
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.Fix { background-color: #16A34A !important; }
+        .type-badge.Integration { background-color: #EA580C !important; }
+
+        /* Article body */
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+        .article-body > img, .article-section img, .steps-list img { margin-top: 24px; margin-bottom: 32px; }
+
+        /* Section */
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        /* Outcome list */
+        .outcome-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .outcome-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; }
+        .outcome-list .icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; margin-top: 2px; }
+        .outcome-list .icon.green { background-color: #DCFCE7; color: #16A34A; }
+        .outcome-list .icon.purple { background-color: #F3E8FF; color: #7C3AED; }
+        .outcome-list .icon.orange { background-color: #FFF7ED; color: #EA580C; }
+        .outcome-list .icon.blue { background-color: #DBEAFE; color: #2563EB; }
+
+        /* Steps */
+        .steps-list { display: flex; flex-direction: column; gap: 24px; }
+        .step { display: flex; gap: 16px; align-items: flex-start; }
+        .step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background-color: #7C3AED; color: #fff; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .step-content h4 { font-size: 1rem; font-weight: 700; color: #101828; margin-bottom: 4px; }
+        .step-content p { margin-bottom: 0; font-size: 0.95rem; color: #4A5565; }
+
+        /* Capability grid */
+        .capability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .capability-card { background-color: #F4F4F7; border-radius: 12px; padding: 20px; }
+        .capability-card h4 { font-size: 0.9rem; font-weight: 700; color: #101828; margin-bottom: 6px; }
+        .capability-card p { font-size: 0.85rem; margin-bottom: 0; line-height: 1.5; color: #4A5565; }
+
+        /* CTA band */
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .capability-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
 </head>
 <body>
 
