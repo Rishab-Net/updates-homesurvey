@@ -98,3 +98,39 @@ The Interactive AI Move Summary generates a complete move playbook after invento
 - Risk flags surface before the quote goes out, preventing underestimates.
 - Estimates stay accurate as inventory changes — no manual spreadsheet recalculation needed.
 - Transparent assumptions let operations teams audit and adjust the estimation model.
+
+---
+
+## Improvement: Every Room, Photographed. See a Real Report.
+**Released:** April 29, 2026
+**Type:** Improvement + Sample Report
+**URL:** https://updates.homesurvey.ai/articles/sample-survey-report/
+
+### Overview
+Survey reports now include a room-level photo for every space captured during the customer's video walkthrough. Previously, HomeSurvey.ai reports contained item inventory only — quantities, volumes, weights, and handling flags. Each room section now opens with a timestamped photo pulled directly from the customer's video, paired with the room's inventory table. No additional setup required — photos are captured automatically as part of the AI processing pipeline.
+
+### What Changed
+- **Before:** Reports contained item tables with quantities, volumes, weights, carton assignments, and handling flags. No visual record of the room.
+- **After:** Each room section now includes a timestamped photo captured from the customer's walkthrough video, displayed above the item table.
+
+### Sample Report Details
+A real residential survey report (redacted for privacy) is available to browse at the article URL above. Key stats from the sample:
+- 13 rooms surveyed, each with a room-level photo
+- 126 items shipped (43 excluded via voice notes)
+- 2,064 CFT / 14,446 LBS total volume and weight
+- 111 carrier-packed cartons across 11 carton types
+- 19-page PDF output, available to browse inline or download
+
+### What the Report Contains
+- **Page 1:** Container summary — 111 CP cartons across 11 types (Small, Medium, Large, XL, Lamp, Picture/Mirror, TV, Wardrobe Shorty, Book Box, Dish Pack, Tall Lamp) with cubic footage per type
+- **Page 2:** Room breakdown table — all 13 rooms with item counts, exclusions, volume, weight, carton counts, and AI room notes
+- **Pages 3–19:** One page per room, each with: timestamped photo, room-level note, item-by-item table with handling flags (2-MAN, HEAVY, SCRATCH-PRONE, DENT-PRONE), CFT/FT3, LBS, and voice note indicators
+- **AI Room Notes:** Natural-language summary per room explaining what's going, what's staying, and any customer instructions
+
+### Rooms in Sample
+Master Bedroom, Master Bath, Bedroom 2, Bedroom 3, Laundry Room, Library/Study, Living Room, Dining Room, Pantry, Garage, Kitchen, Bedroom 4, Backyard
+
+### Business Outcomes
+- Reps have a visual record of every room at the time of survey — useful for dispute resolution and move-day audits
+- Photos paired with item tables let reps verify AI detections against what was visible in the room
+- Timestamped photos create an auditable record of the home's condition at survey time

@@ -7,13 +7,15 @@
 
 ## Product Updates
 
-- [All Updates](https://updates.homesurvey.ai/): Searchable, filterable listing of all product announcements. Supports keyword search and article type filtering (Feature, Improvement, Fix, Integration).
+- [All Updates](https://updates.homesurvey.ai/): Searchable, filterable listing of all product announcements. Supports keyword search and article type filtering (Feature, Improvement, Sample, Fix, Integration).
 
 - [Custom Questionnaire](https://updates.homesurvey.ai/articles/custom-questionnaire/): New Feature — configure move-type-specific pre-survey questions with branching logic. 12 move types, 10 field types, cross-validation between customer answers and AI detections. Customer answers flow into the AI pipeline as hints and surface in the review dashboard.
 
 - [Voice Notes with Auto Exclude](https://updates.homesurvey.ai/articles/voice-notes-auto-exclude/): New Feature — during the video walkthrough, customers speak naturally about what stays and goes. The AI transcribes, classifies (GOES/STAYS/DISPOSE), and auto-excludes items. 8 note types, alias-aware matching, confidence scoring, blanket statement handling, silence detection.
 
 - [Interactive AI Move Summary](https://updates.homesurvey.ai/articles/interactive-ai-move-summary/): New Feature — AI generates a complete move playbook with crew size scenarios, truck counts, pack/load/unload hours, risk flags, and estimator tips. Recalculate button recomputes estimates from live inventory edits with transparent assumptions.
+
+- [Every Room, Photographed. See a Real Report.](https://updates.homesurvey.ai/articles/sample-survey-report/): Improvement + Sample Report — survey reports now include a timestamped room-level photo for every space captured during the walkthrough. Browse a real 19-page AI output: 13 rooms, 126 items, 111 cartons, handling flags, AI room notes, and carton summary. Redacted for privacy, otherwise unmodified.
 
 ## More Information
 - [How It Works](https://homesurvey.ai/how-it-works/): Step-by-step walkthrough of the HomeSurvey.ai process.

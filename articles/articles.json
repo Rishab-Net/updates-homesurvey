@@ -1,13 +1,14 @@
 [
   {
     "slug": "sample-survey-report",
-    "title": "Inside a Real HomeSurvey.ai Report",
-    "tagline": "13 rooms. 126 items. 111 cartons. See exactly what lands in your dashboard after a customer completes a walkthrough.",
-    "type": "Feature",
+    "title": "Every Room, Photographed. See a Real Report.",
+    "tagline": "Survey reports now include a room-level photo for every space. Browse a real 19-page AI output — unedited.",
+    "type": "Improvement",
+    "secondaryType": "Sample",
     "publishedAt": "2026-04-29T10:00:00-04:00",
     "published": true,
-    "keywords": ["sample", "report", "survey", "demo", "example", "inventory", "cartons", "rooms", "flags", "AI notes", "voice notes", "real", "residential", "walkthrough"],
-    "summary": "A real residential survey report — redacted for privacy — showing 13 rooms, 126 shipped items, 111 cartons, AI-generated handling flags, room photos, and natural-language room notes. Browse all 19 pages inline."
+    "keywords": ["sample", "report", "survey", "photos", "room photos", "improvement", "demo", "example", "inventory", "cartons", "rooms", "flags", "AI notes", "voice notes", "real", "residential", "walkthrough"],
+    "summary": "Survey reports now include a timestamped room-level photo for every space captured during the walkthrough. Browse a real residential survey — 13 rooms, 126 items, 111 cartons, AI flags, and room notes. Redacted for privacy, unmodified otherwise."
   },
   {
     "slug": "custom-questionnaire",
