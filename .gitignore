@@ -1,0 +1,6 @@
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+
+# Source image folder (originals — cropped/deploy versions live in articles/img/)
+articles/Article images/

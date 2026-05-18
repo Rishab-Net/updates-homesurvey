@@ -16,7 +16,7 @@
     "tagline": "Capture customer context before the AI even starts.",
     "type": "Feature",
     "publishedAt": "2026-04-07T10:00:00-04:00",
-    "published": false,
+    "published": true,
     "keywords": ["questionnaire", "questions", "branching", "move type", "custom", "survey", "pre-survey", "military", "pro-gear", "PBP&E", "context", "logistics"],
     "summary": "Let movers configure general or move-type-specific pre-survey questions with branching logic. Customer answers flow into the AI pipeline, flag special items early, and surface in the review dashboard."
   },

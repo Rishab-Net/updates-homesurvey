@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Questionnaire &mdash; Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="Configure move-type-specific pre-survey questions with branching logic. Customer answers flow into the AI pipeline, flag special items early, and surface mismatches in the review dashboard.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/custom-questionnaire.html">
+    <meta property="og:title" content="Custom Questionnaire &mdash; HomeSurvey.ai Product Update">
+    <meta property="og:description" content="Capture customer context before the AI even starts. 12 move types, 10 field types, branching logic, and cross-validation against video detections.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/custom-questionnaire.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../article-styles.css">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        /* Hero */
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 640px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        /* Badge */
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.Fix { background-color: #16A34A !important; }
+        .type-badge.Integration { background-color: #EA580C !important; }
+
+        /* Article body */
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+        .article-body > img, .article-section img, .steps-list img { margin-top: 24px; margin-bottom: 32px; }
+
+        /* Section */
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        /* Outcome list */
+        .outcome-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .outcome-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; }
+        .outcome-list .icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; margin-top: 2px; }
+        .outcome-list .icon.green { background-color: #DCFCE7; color: #16A34A; }
+        .outcome-list .icon.purple { background-color: #F3E8FF; color: #7C3AED; }
+        .outcome-list .icon.orange { background-color: #FFF7ED; color: #EA580C; }
+        .outcome-list .icon.blue { background-color: #DBEAFE; color: #2563EB; }
+
+        /* Steps */
+        .steps-list { display: flex; flex-direction: column; gap: 24px; }
+        .step { display: flex; gap: 16px; align-items: flex-start; }
+        .step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background-color: #7C3AED; color: #fff; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .step-content h4 { font-size: 1rem; font-weight: 700; color: #101828; margin-bottom: 4px; }
+        .step-content p { margin-bottom: 0; font-size: 0.95rem; color: #4A5565; }
+
+        /* Capability grid */
+        .capability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .capability-card { background-color: #F4F4F7; border-radius: 12px; padding: 20px; }
+        .capability-card h4 { font-size: 0.9rem; font-weight: 700; color: #101828; margin-bottom: 6px; }
+        .capability-card p { font-size: 0.85rem; margin-bottom: 0; line-height: 1.5; color: #4A5565; }
+
+        /* CTA band */
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .capability-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="../" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Feature">New Feature</span>
+        <span class="date">April 7, 2026</span>
+    </div>
+    <h1>Custom Questionnaire</h1>
+    <p class="tagline">Capture customer context before the AI even starts.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- WHAT IT DOES -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What It Does</p>
+        <h2>The Customer Context the AI Needs &mdash; Asked Up Front</h2>
+        <p>Custom Questionnaire lets your team configure pre-survey questions customers answer before, during, or after their video walkthrough. Every question can be scoped by move type, support conditional follow-ups, and route automatically to the right moment in the customer&rsquo;s flow.</p>
+        <p>Answers don&rsquo;t sit in a form &mdash; they flow into the AI pipeline as hints, get cross-validated against what the AI detects on video, and surface in your rep&rsquo;s review dashboard with mismatch flags. Pianos, safes, narrow stairs, parking restrictions, and military pro-gear are captured before a single frame of video is analyzed.</p>
+    </div>
+
+    <!-- HERO IMAGE: Admin questionnaire view -->
+    <figure style="margin:24px 0 32px;">
+        <img src="img/cq-admin-questionnaire.png" alt="Survey Questionnaire admin view — twelve move-type tabs (General, Local, Intrastate, Interstate, Intl, Storage, Military, Commercial, Auto, Senior, Student, Specialty), a Placement filter, an Add Question button, and three example general questions with branching follow-ups." style="width:100%;max-width:840px;border-radius:12px;display:block;margin:0 auto;box-shadow:0 8px 32px rgba(13,42,92,0.12);" />
+        <figcaption style="font-size:0.85rem;color:#94a3b8;text-align:center;margin-top:10px;">The admin view. Twelve move-type tabs across the top, filter by placement, branching follow-ups indented under each parent question. The &ldquo;1 branch rule&rdquo; badge on question 01 expands to &ldquo;If No &rarr; Will a shuttle (smaller truck) be needed?&rdquo; &mdash; configured once, asked only when relevant.</figcaption>
+    </figure>
+
+    <!-- WHY IT MATTERS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Why It Matters</p>
+        <h2>Fewer Surprises. Better Detections. Tighter Quotes.</h2>
+        <ul class="outcome-list">
+            <li>
+                <span class="icon green">&#10003;</span>
+                <span><strong>Special items flagged before the AI runs.</strong> When a customer tells you upfront about a piano, safe, firearm, or high-value antique, the AI pays closer attention during video analysis &mdash; detection accuracy climbs because the model knows what to look for.</span>
+            </li>
+            <li>
+                <span class="icon purple">&#9733;</span>
+                <span><strong>Access details captured before move day.</strong> Origin floor, stair counts, elevator availability, long carry, and parking constraints get logged upfront. Your <a href="../interactive-ai-move-summary/">move estimate</a> reflects real-world conditions instead of best-case assumptions.</span>
+            </li>
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Discrepancies caught before the quote ships.</strong> The cross-validator compares each customer claim against AI video detections and assigns a severity (confirmed, info, review, or mismatch). Your rep reviews flagged items before pricing goes out the door.</span>
+            </li>
+            <li>
+                <span class="icon blue">&#9881;</span>
+                <span><strong>Move-type tailored, one configuration.</strong> Twelve move types each get their own question set &mdash; military pro-gear, international customs, commercial floor IDs, senior services, storage transitions. Configure once, route automatically.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">How It Works</p>
+        <h2>From Configured Question to Cross-Validated Answer</h2>
+        <div class="steps-list">
+            <div class="step">
+                <span class="step-num">1</span>
+                <div class="step-content">
+                    <h4>Admin Configures Questions in the Portal</h4>
+                    <p>Pick the move type, choose where the question appears (pre-capture, per-room, after-capture, or post-survey), select a field type (yes/no, single select, multi select, text, number, date, time range, photo upload, state/province, country), and set any branching rules. Up to three nesting levels supported for follow-up chains like &ldquo;Do you have stairs?&rdquo; &rarr; &ldquo;How many flights?&rdquo; &rarr; &ldquo;Are they interior or exterior?&rdquo;</p>
+                </div>
+            </div>
+
+            <figure style="margin:8px auto 8px;max-width:520px;">
+                <img src="img/cq-add-question-modal.png" alt="Add New Question modal — fields for Question Text, Type (Yes / No selected), Required toggle, Placement (After Capture default), Group (Access & Logistics), Move Types radio (General Question vs Move Type-specific), Branching Rules with an Add Branch Rule Level 1 button, Help Text, and Admin Note." style="width:100%;border-radius:12px;display:block;box-shadow:0 8px 32px rgba(13,42,92,0.18);" />
+                <figcaption style="font-size:0.85rem;color:#94a3b8;text-align:center;margin-top:10px;">Every question controls type, required flag, placement, category group, scope (general or move-type-specific), branching, customer-facing help text, and an internal admin note &mdash; configured in one modal.</figcaption>
+            </figure>
+
+            <div class="step">
+                <span class="step-num">2</span>
+                <div class="step-content">
+                    <h4>Customer Answers When They Open the Link</h4>
+                    <p>Questions surface based on the placement you configured. Pre-capture questions appear before the video walkthrough begins. Per-room questions surface only in the relevant room. Post-survey questions catch anything that needs context after capture is done. Partial answers are stored if the customer closes the questionnaire midway &mdash; nothing gets lost.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">3</span>
+                <div class="step-content">
+                    <h4>Answers Become Pipeline Hints for the AI</h4>
+                    <p>Responses are flattened into structured hints (has_piano, origin_floor, pro_gear_flag, requires_shuttle, etc.) and passed to the AI alongside the video. The model uses these hints to bias detection &mdash; it actively looks for items the customer mentioned and pays closer attention to rooms flagged as containing special items.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span>
+                <div class="step-content">
+                    <h4>Cross-Validator Compares Answers vs. Video</h4>
+                    <p>After inventory generation, every customer answer is compared against what the AI actually detected. Matches get a confirmed badge. New detections the customer didn&rsquo;t mention get an info badge. Items the customer claimed but the AI didn&rsquo;t find get a review badge. Direct contradictions get a mismatch flag for rep follow-up.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">5</span>
+                <div class="step-content">
+                    <h4>Rep Sees Everything in the Dashboard</h4>
+                    <p>All responses appear in a collapsible panel grouped by category &mdash; Access &amp; Logistics, Special Items, Services &amp; Preferences. Cross-validation flags appear inline next to the matching inventory rows so reps can resolve gaps without context-switching.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KEY CAPABILITIES -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Key Capabilities</p>
+        <h2>What&rsquo;s Included</h2>
+        <div class="capability-grid">
+            <div class="capability-card">
+                <h4>12 Move Types</h4>
+                <p>Local, Intrastate, Interstate, International, Storage, Military, Commercial, Auto Transport, Senior, Student, Specialty, and General &mdash; each with its own question set.</p>
+            </div>
+            <div class="capability-card">
+                <h4>10 Field Types</h4>
+                <p>Yes/No, Single Select, Multi Select, Text, Number, Date, Time Range, Photo Upload, State/Province, and Country. Cover any input a customer might need to provide.</p>
+            </div>
+            <div class="capability-card">
+                <h4>Branching Logic</h4>
+                <p>Follow-up questions triggered by parent answers. Up to three nesting levels deep so you can drill into stair counts, floor numbers, or item-specific details only when relevant.</p>
+            </div>
+            <div class="capability-card">
+                <h4>4 Placement Options</h4>
+                <p>Pre-capture, after-capture, per-room (filtered by room type), and post-survey. Ask the right question at the right moment in the customer&rsquo;s flow.</p>
+            </div>
+            <div class="capability-card">
+                <h4>Cross-Validation</h4>
+                <p>Customer answers are compared against AI video detections. Four severity levels &mdash; confirmed, info, review, mismatch &mdash; surface inline in the dashboard.</p>
+            </div>
+            <div class="capability-card">
+                <h4>Military Pro-Gear</h4>
+                <p>Dedicated PBP&amp;E section (questions PG1&ndash;PG23) with weight tracking against the 2,000 lb member / 500 lb spouse allowances. Built for JTR compliance out of the box.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top:40px;">Branching, three levels deep</h3>
+        <p>One multi-select question can fan out into specialty sub-questions per option &mdash; and each of those can fan out again. A real example from the &ldquo;Do you have any heavy or oversized items?&rdquo; question:</p>
+        <figure style="margin:16px 0 0;">
+            <img src="img/cq-branching-depth.png" alt="Branching depth example — Question 08 Do you have any heavy or oversized items? (multi-select, 5 branch rules). Piano expands into What type of piano, which expands again into Grand and Baby Grand each asking about straight path to exit and doorway width over 36 inches, plus What floor is the piano on. Pool table, Hot tub/spa, and Safe over 200 lbs each have their own three follow-ups." style="width:100%;max-width:840px;border-radius:12px;display:block;margin:0 auto;box-shadow:0 8px 32px rgba(13,42,92,0.12);" />
+            <figcaption style="font-size:0.85rem;color:#94a3b8;text-align:center;margin-top:10px;">Piano &rarr; type of piano (Grand or Baby Grand) &rarr; straight path to exit and doorway clearance. Three levels deep, and only the relevant questions are shown to the customer. Pool tables ask about size and slate pieces, hot tubs ask about drainage and crane access, safes get their own follow-ups &mdash; each specialty item driven by the operations details your crew actually needs.</figcaption>
+        </figure>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Ask the right question. Get the right answer.</h3>
+        <p>Configure pre-survey questions tailored to your move types &mdash; and let cross-validation surface gaps before the quote goes out.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>
