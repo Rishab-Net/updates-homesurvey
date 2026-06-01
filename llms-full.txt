@@ -101,6 +101,39 @@ The Interactive AI Move Summary generates a complete move playbook after invento
 
 ---
 
+## Improvement: The Margin Is in the Clutter (Accuracy Upgrade)
+**Released:** May 31, 2026
+**Type:** Improvement + Accuracy Upgrade
+**URL:** https://updates.homesurvey.ai/articles/accuracy-upgrade-garage-kitchen/
+
+### Overview
+An accuracy upgrade to the AI virtual moving survey, focused on the high-clutter rooms that pre-move surveys most often undercount: the garage and the kitchen. Every survey method catches large furniture like the sofa; the margin is lost in the clutter — tools, appliances, dinnerware, and packing-heavy contents that drive carton counts, labor, and profit. This release captures more of those items, identifies items staying behind more sharply, and flags items seen across multiple videos. Live automatically on every new survey with no workflow changes.
+
+### What Changed
+- **Nearly 100 new item types** added, led by garage and kitchen.
+- **More items captured:** 15-23% more items per home, measured side by side on the same property.
+- **Sharper exclusions:** 20%+ better at identifying items staying behind, so they don't inflate the estimate.
+- **Cross-video duplicate detection:** the same item caught across multiple room videos is flagged for review instead of double-counted (e.g., a sectional sofa appearing in both the living room and family room video — the rep decides one item or two).
+- **Cleaner visual inventory:** a fuller, more accurate cube sheet and scope ready for final review.
+- **Better carton estimates:** tighter packing math that flows straight into the quote.
+
+### Before / After (Same Property)
+- Items captured: 320 → 394 (+23%)
+- Inventory volume: 3,369 → 3,521 cu ft (+5%)
+- Billable cartons: 129 → 153 (+19%) — 24 additional cartons now in the estimate before move day
+
+### New Item Types (Highlights)
+- **Garage & tools (new):** power tools, floor jacks, tool bags, workbench equipment, lawn & outdoor gear (joining existing detections like workbench, tool cabinet, shelving unit, ladder, bicycle, wheelbarrow, cooler, extension cords).
+- **Kitchen (new):** pressure cookers, waffle makers, dinnerware & china, small appliances, packing-heavy contents (joining existing detections like refrigerator, dining table, bar stools, microwave, toaster, coffee maker, cutting boards, blender).
+
+### Business Outcomes
+- More complete inventories mean carton counts, packing revenue, and labor are scoped to what's actually in the home — protecting margin that is otherwise lost before the move starts.
+- Undercounted garages and kitchens were a leading source of estimate error; capturing them tightens quotes and reduces move-day variance.
+- Cross-video duplicate flags prevent over-counting the same item across rooms.
+- No setup or workflow change required — improvements apply automatically to every new pre-move survey.
+
+---
+
 ## Improvement: Every Room, Photographed. See a Real Report.
 **Released:** April 29, 2026
 **Type:** Improvement + Sample Report

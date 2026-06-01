@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Margin Is in the Clutter — Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="HomeSurvey.ai's AI virtual moving survey is now more accurate in the garage and kitchen — ~15-23% more items per home, sharper exclusions, and a fuller visual inventory and cube sheet on every estimate.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/accuracy-upgrade-garage-kitchen/">
+    <meta property="og:title" content="The Margin Is in the Clutter — HomeSurvey.ai Product Update">
+    <meta property="og:description" content="The same home. 24 more billable cartons. The AI virtual moving survey is now more accurate where the clutter — and the cartons — hide: the garage and the kitchen.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/accuracy-upgrade-garage-kitchen/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        /* Hero */
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        /* Badge */
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.Fix { background-color: #16A34A !important; }
+        .type-badge.Integration { background-color: #EA580C !important; }
+        .type-badge.accuracy { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        /* Article body */
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+
+        /* Section */
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        /* Outcome list */
+        .outcome-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .outcome-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; }
+        .outcome-list .icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; margin-top: 2px; }
+        .outcome-list .icon.green { background-color: #DCFCE7; color: #16A34A; }
+        .outcome-list .icon.purple { background-color: #F3E8FF; color: #7C3AED; }
+        .outcome-list .icon.orange { background-color: #FFF7ED; color: #EA580C; }
+        .outcome-list .icon.blue { background-color: #DBEAFE; color: #2563EB; }
+
+        /* Anaphora */
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        /* Stats strip (shared with sample report) */
+        .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0 24px; }
+        .stat-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 14px; text-align: center; }
+        .stat-num { font-size: 2rem; font-weight: 800; color: #101828; letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; display: block; }
+        .stat-label { font-size: 0.75rem; font-weight: 700; color: #4A5565; text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+        .stat-sub { font-size: 0.72rem; color: #94a3b8; margin-top: 3px; display: block; }
+
+        /* Feature cards grid (shared with sample report) */
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Item chips (built on shared .flag chip pattern) */
+        .chip-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
+        .flag { display: inline-block; padding: 4px 11px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em; }
+        .flag.new  { background-color: #F3E8FF; color: #6D28D9; }
+        .flag.base { background-color: #FFFFFF; color: #4A5565; border: 1px solid #e2e8f0; }
+        .legend-note { font-size: 0.82rem; color: #4A5565; margin: 14px 0 16px; display: flex; align-items: center; gap: 8px; }
+        .legend-sw { width: 12px; height: 12px; border-radius: 4px; background-color: #7C3AED; display: inline-block; }
+
+        /* Before / after photo pair */
+        .photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 12px; }
+        .photo-pair figure { margin: 0; }
+        .photo-pair img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; border: 1px solid #e8e7ef; display: block; }
+        .photo-pair figcaption { font-size: 0.82rem; font-weight: 600; color: #4A5565; margin-top: 8px; }
+        .photo-caption-note { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        /* Duplicate-detection callout */
+        .dup-callout { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; margin-top: 20px; }
+        .dup-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+        .dup-title { font-weight: 700; color: #101828; font-size: 0.95rem; }
+        .dup-flag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; background-color: #FEF3C7; color: #92400E; padding: 4px 11px; border-radius: 50px; }
+        .dup-body { font-size: 0.92rem; color: #4A5565; line-height: 1.6; margin: 0 0 16px; }
+        .dup-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .dup-btn { font-size: 0.82rem; font-weight: 600; border-radius: 9px; padding: 9px 18px; display: inline-block; }
+        .dup-btn.primary { background-color: #7C3AED; color: #fff; }
+        .dup-btn.ghost { background-color: #fff; border: 1px solid #e2e8f0; color: #101828; }
+
+        /* CTA band */
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .stats-strip { grid-template-columns: repeat(2, 1fr); }
+            .photo-pair { grid-template-columns: 1fr; }
+            .stat-num { font-size: 1.6rem; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Improvement">Improvement</span>
+        <span class="type-badge accuracy">Accuracy Upgrade</span>
+        <span class="date">May 31, 2026</span>
+    </div>
+    <h1>The Margin Is in the Clutter</h1>
+    <p class="tagline">Every survey method catches the sofa. It&rsquo;s the clutter that gets missed &mdash; the garage, the kitchen, and the packing-heavy items that quietly drive carton counts, labor, and profit.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- THE CLUTTER -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Margin Is in the Clutter</p>
+        <h2>Every Method Catches the Sofa. The Clutter Is What Gets Missed.</h2>
+        <p>The garage. The kitchen. The shelves, tools, appliances, and packing-heavy items that quietly drive carton counts, labor, and profit. When those items don&rsquo;t make it into the inventory, you&rsquo;re often giving away margin before the move even starts.</p>
+        <div class="photo-pair">
+            <figure>
+                <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/f4827656-52a1-1e4a-a355-7766ca213f53.jpeg" alt="A cluttered residential garage packed with power tools, a workbench, storage totes, boxes, ladders and a bicycle — the kind of high-clutter room a pre-move survey undercounts">
+                <figcaption>The garage</figcaption>
+            </figure>
+            <figure>
+                <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/d389a108-d8c3-44ba-ff31-d5c74603bc92.jpeg" alt="A lived-in kitchen with cluttered countertops: small appliances, stacked dinnerware, pots and packing-heavy contents, all easy to undercount by eye">
+                <figcaption>The kitchen</figcaption>
+            </figure>
+        </div>
+        <p class="photo-caption-note">The two rooms where the clutter &mdash; and the cartons &mdash; hide.</p>
+    </div>
+
+    <!-- BEFORE & AFTER -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Before &amp; After</p>
+        <h2>The Same Home. 24 More Billable Cartons.</h2>
+        <p>In side-by-side testing on the same property, the upgraded AI virtual moving survey captured significantly more of what&rsquo;s actually in the home:</p>
+        <div class="stats-strip">
+            <div class="stat-card">
+                <span class="stat-num">394</span>
+                <span class="stat-label">Items Captured</span>
+                <span class="stat-sub">up from 320 &middot; +23%</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">3,521</span>
+                <span class="stat-label">Inventory Cu Ft</span>
+                <span class="stat-sub">up from 3,369 &middot; +5%</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">153</span>
+                <span class="stat-label">Billable Cartons</span>
+                <span class="stat-sub">up from 129 &middot; +19%</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">+24</span>
+                <span class="stat-label">Added Cartons</span>
+                <span class="stat-sub">now in the estimate</span>
+            </div>
+        </div>
+        <p>That&rsquo;s <strong>24 additional cartons</strong> that now make it into the estimate before move day arrives.</p>
+        <p>The shape of that gain matters: 23% more items but only 5% more volume. That&rsquo;s clutter &mdash; small, dense, packing-heavy pieces that add cartons and labor without adding much cube. It&rsquo;s the inventory that eyeballing a room misses.</p>
+        <div class="photo-pair">
+            <figure>
+                <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/e5bed667-f612-65e8-4942-7f816d937977.jpeg" alt="The same garage analyzed by the AI virtual moving survey: every tool, bin, ladder and bicycle detected and assigned to a moving carton">
+                <figcaption>The garage, fully itemized</figcaption>
+            </figure>
+            <figure>
+                <img src="https://mcusercontent.com/5b9abe283af2996fb2973caf1/images/3eceb283-e367-f2d1-ee56-63116f54ccad.jpeg" alt="The same kitchen analyzed by the AI moving survey: dishes, small appliances and pantry contents detected and assigned to dishpacks and cartons">
+                <figcaption>The kitchen, fully itemized</figcaption>
+            </figure>
+        </div>
+        <p class="photo-caption-note">The same two rooms, fully itemized &mdash; every item detected and assigned to a carton.</p>
+    </div>
+
+    <!-- WHY IT MATTERS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Why It Matters</p>
+        <h2>Most Estimate Mistakes Don&rsquo;t Come From Missing the Dining Table</h2>
+        <div class="anaphora">
+            <p>They come from undercounting the garage.</p>
+            <p>They come from overlooking kitchen contents.</p>
+            <p class="climax">They come from treating clutter like a guess instead of inventory.</p>
+        </div>
+        <p>When carton counts are underestimated:</p>
+        <ul class="outcome-list">
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Packing revenue is missed.</strong> Cartons that never make the estimate never get billed.</span>
+            </li>
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Labor is underestimated.</strong> Crews are scoped for less than what&rsquo;s actually in the home.</span>
+            </li>
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Crews arrive underprepared.</strong> Missing cartons mean missing time, trucks, and materials.</span>
+            </li>
+            <li>
+                <span class="icon purple">&#9733;</span>
+                <span><strong>Margins disappear before the move even starts.</strong> The gap is set the moment the quote goes out.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- WHAT CHANGED -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What Changed</p>
+        <h2>Nearly 100 New Item Types, Led by Garage &amp; Kitchen</h2>
+        <p>This release adds <strong>nearly 100 new item types</strong> to the AI virtual moving survey, with a heavy focus on the two rooms where clutter &mdash; and cartons &mdash; pile up. Highlighted items are new in this release:</p>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">🧰</span>
+                <h4>Garage &amp; Tools</h4>
+                <p style="margin-bottom:12px;">High-clutter, high-volume gear.</p>
+                <div class="chip-row">
+                    <span class="flag new">Power tools</span><span class="flag new">Floor jacks</span><span class="flag new">Tool bags</span><span class="flag new">Workbench equipment</span><span class="flag new">Lawn &amp; outdoor gear</span>
+                    <span class="flag base">Workbench</span><span class="flag base">Tool cabinet</span><span class="flag base">Shelving unit</span><span class="flag base">Ladder</span><span class="flag base">Bicycle</span><span class="flag base">Wheelbarrow</span><span class="flag base">Cooler</span><span class="flag base">Extension cords</span>
+                </div>
+            </div>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">🍽️</span>
+                <h4>Kitchen</h4>
+                <p style="margin-bottom:12px;">Dense, fragile, packing-heavy.</p>
+                <div class="chip-row">
+                    <span class="flag new">Pressure cookers</span><span class="flag new">Waffle makers</span><span class="flag new">Dinnerware &amp; china</span><span class="flag new">Small appliances</span><span class="flag new">Packing-heavy contents</span>
+                    <span class="flag base">Refrigerator</span><span class="flag base">Dining table</span><span class="flag base">Bar stools</span><span class="flag base">Microwave</span><span class="flag base">Toaster</span><span class="flag base">Coffee maker</span><span class="flag base">Cutting boards</span><span class="flag base">Blender</span>
+                </div>
+            </div>
+        </div>
+        <p class="legend-note"><span class="legend-sw"></span> Highlighted = new in this release</p>
+        <p>The result: more complete inventories, better carton estimates, and more accurate quotes &mdash; with no workflow changes.</p>
+    </div>
+
+    <!-- ALSO INCLUDED -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Also Included</p>
+        <h2>Everything in This Release</h2>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">📦</span>
+                <h4>More Items Captured</h4>
+                <p>15&ndash;23% more items per home, measured side by side on the same property.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">✅</span>
+                <h4>Sharper Exclusions</h4>
+                <p>20%+ better at identifying items staying behind, so they don&rsquo;t inflate the estimate.</p>
+            </div>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">🔁</span>
+                <h4>Cross-Video Duplicate Detection</h4>
+                <p>The same item caught across multiple videos is flagged for review instead of double-counted.</p>
+            </div>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">📋</span>
+                <h4>Cleaner Visual Inventory</h4>
+                <p>A fuller, more accurate cube sheet and scope, ready for final review.</p>
+            </div>
+            <div class="feature-card purple">
+                <span class="feature-card-icon">🧮</span>
+                <h4>Better Carton Estimates</h4>
+                <p>Tighter packing math that flows straight into the quote.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">⚡</span>
+                <h4>Automatic</h4>
+                <p>Live on every new survey. No setup, no workflow changes.</p>
+            </div>
+        </div>
+
+        <div class="dup-callout">
+            <div class="dup-head">
+                <span class="dup-title">Cross-Video Duplicate Detection</span>
+                <span class="dup-flag">Flagged for review</span>
+            </div>
+            <p class="dup-body">The same <strong>sectional sofa</strong> detected in both the living room video and the family room video is now flagged instead of silently counted twice. Your rep decides: one item or two?</p>
+            <div class="dup-actions">
+                <span class="dup-btn primary">Keep one</span>
+                <span class="dup-btn ghost">Keep both</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Run your next survey and see the difference.</h3>
+        <p>It&rsquo;s already live on every new HomeSurvey.ai survey &mdash; no setup, no workflow changes. Start free and see the fuller inventory on your first one.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>

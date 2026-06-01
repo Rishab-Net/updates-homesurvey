@@ -1,5 +1,15 @@
 [
   {
+    "slug": "accuracy-upgrade-garage-kitchen",
+    "title": "The Margin Is in the Clutter",
+    "tagline": "The same home, 24 more billable cartons. The AI survey is now sharper where the clutter — and the cartons — hide: the garage and the kitchen.",
+    "type": "Improvement",
+    "publishedAt": "2026-05-31T10:00:00-04:00",
+    "published": true,
+    "keywords": ["accuracy", "accuracy upgrade", "garage", "kitchen", "clutter", "cartons", "billable cartons", "item types", "more items", "exclusions", "duplicate detection", "cross-video", "cube sheet", "visual inventory", "carton estimate", "improvement", "AI moving survey", "virtual moving survey"],
+    "summary": "The AI virtual moving survey now captures the high-clutter rooms more completely — nearly 100 new item types led by garage and kitchen, 15-23% more items per home, 20%+ sharper exclusions, and cross-video duplicate detection. On the same property: 320 to 394 items, 129 to 153 billable cartons (+24). Automatic on every new survey, no workflow changes."
+  },
+  {
     "slug": "sample-survey-report",
     "title": "Every Room, Photographed. See a Real Report.",
     "tagline": "Survey reports now include a room-level photo for every space. Browse a real 19-page AI output — unedited.",
