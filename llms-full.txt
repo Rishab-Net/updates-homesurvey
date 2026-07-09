@@ -101,6 +101,89 @@ The Interactive AI Move Summary generates a complete move playbook after invento
 
 ---
 
+## Feature: Your Inventory, Your Call (Weight Override, Tags, Photos Appendix)
+**Released:** July 3, 2026
+**Type:** New Feature + Customer-Driven
+**URL:** https://updates.homesurvey.ai/articles/inventory-control-photos-appendix/
+
+### Overview
+Five inventory-control upgrades shipped from a single working mover's field feedback. The AI builds the inventory; this release gives the reviewing rep the final word — on weights, on photos, on which items carry photographic evidence into the report.
+
+### How It Works
+1. The item editor gains a Sync Weight & Volume checkbox. Enabled (default): weight and volume stay linked and recalculate by density. Disabled: each field is edited independently, and the item header and AI summary display the user-entered values instead of recalculating them.
+2. The item list can be filtered by user-defined tags.
+3. Manually added items support custom photos: select a frame from the walkthrough video, or upload from the device gallery or camera. This also fixes manually added items displaying a random incorrect image.
+4. Photos Appendix: under Settings → Organization → PDF Image Tags, admins configure which tags belong in the report (e.g., Heavy, Pre-existing Damage). Tagged items appear in a Photos Appendix section at the end of the exported survey PDF with item name, image, and applied tags. Available on paid plans.
+
+### Key Capabilities
+- **Independent Weight Override:** Break the weight/volume density link per item; overridden values propagate to the item header and AI summary.
+- **Tag Filtering:** Filter the item list by any user-defined tag.
+- **Selectable Item Photos:** Video frame, gallery upload, or camera for manually added items.
+- **Tag-Driven Photos Appendix (paid):** Configurable per organization; item name + image + tags at the end of the survey PDF.
+
+### Fixes in This Release
+- HVI (high-value item) count mismatch between the survey stats bar and the PDF report.
+- Pro-gear survey count mismatches between AI summary, header stats bar, and room badges; pro-gear dashboard filter fixed.
+- Item deletions from search results now persist.
+- Specialty item counts corrected by properly categorizing TVs, lamps, mirrors, and artwork in the dashboard summary.
+
+### Business Outcomes
+- Reps can assert known freight weights without fighting density math — estimates reflect field knowledge.
+- Tagged special-handling items carry photographic evidence into the customer-facing report, reducing damage disputes.
+- The Photos Appendix gives paid plans a concrete report-quality differentiator.
+
+---
+
+## Improvement: Sweat the Small Stuff (June 2026 Roundup)
+**Released:** June 30, 2026
+**Type:** Improvement + Roundup
+**URL:** https://updates.homesurvey.ai/articles/june-2026-roundup/
+
+### Overview
+A quality-of-life batch collecting June's smaller ships. Headline fix: a crew member capturing a customer's basement had images fail to upload with no way to retry — the retry option now appears directly on the failed upload message.
+
+### What Changed
+- **Retry Upload:** Failed room uploads show a Retry action on the failed item itself; captures stay on the device until upload succeeds.
+- **Ready-for-Review Email Upgrade:** The survey-processed notification email now includes the complexity score, crew size, and total hours, plus the AI summary's key bullet points — in both HomeSurvey.ai standalone and Movegistics CRM.
+- **Branded Welcome Screen:** The survey PWA welcome screen displays the moving company's logo and the sales representative's name.
+- **PDF Download Prompt:** Completing a review in the dashboard prompts an immediate PDF download.
+- **PDF Footer Formatting:** Number formatting in the AI survey PDF footer updated per customer feedback.
+- **Questionnaire FAQs:** Customer-facing FAQs now cover the pre-survey questionnaire.
+- **"None" Move Type:** Added to the move type dropdown in Send Link and the sales-rep Upload Media page.
+
+### Business Outcomes
+- Field captures survive bad signal without restarting a room in front of the customer.
+- Reps triage finished surveys from the inbox — complexity, crew, and hours before opening the dashboard.
+- The first customer touchpoint carries the mover's brand and rep, not an unfamiliar tool's.
+
+---
+
+## Feature: Military Moves, By the Book (Military Flag + Pro-Gear PDF)
+**Released:** June 4, 2026
+**Type:** New Feature + Military
+**URL:** https://updates.homesurvey.ai/articles/military-moves-pro-gear-pdf/
+
+### Overview
+Military moves get first-class treatment in the survey flow. Pro-gear (PBP&E — professional books, papers, and equipment) is weighed separately from household goods and does not count against the weight allowance, up to 2,000 lbs for the member and 500 lbs for the spouse. Documenting it item-by-item at survey time is what prevents disputes at the scale.
+
+### How It Works
+1. The Generate Survey Link form includes a Military Move checkbox alongside the move type dropdown.
+2. Flagged surveys flow through military-aware handling, including the pre-survey questionnaire's dedicated pro-gear section (see Custom Questionnaire: PG questions with weight tracking against regulatory limits).
+3. A dedicated Pro-Gear PDF generates from the survey: each pro-gear item with its weight, and running totals against the member and spouse allowances.
+
+### Key Capabilities
+- **Military Move Flag:** One checkbox at send; replaces the old service-type workaround.
+- **Pro-Gear PDF:** Itemized weights with totals against the 2,000 / 500 lb limits, generated from the survey for the move file.
+- **CRM Parity:** The same Pro-Gear PDF generates inside Movegistics CRM (shipped July 2, 2026).
+- **Consistent Counts:** Pro-gear totals agree across AI summary, header stats, room badges, and dashboard filters (fixes shipped July 3, 2026).
+
+### Business Outcomes
+- Uncounted pro-gear stops turning into disputes at the scale — the itemized list generates itself.
+- Ops teams stop hand-building PBP&E worksheets during peak military season.
+- Clean pro-gear documentation makes the mover easier to route work to for agents and TSPs.
+
+---
+
 ## Feature: Sent the Link? You Can Still Fix It. (Edit Survey Info + Guided Onboarding)
 **Released:** June 19, 2026
 **Type:** New Feature + Workflow

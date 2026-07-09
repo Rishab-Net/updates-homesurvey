@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweat the Small Stuff — Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="June's quality batch for HomeSurvey.ai: retry failed uploads on the spot, ready-for-review emails that carry complexity, crew size and hours, and a survey welcome screen with your logo and rep.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/june-2026-roundup/">
+    <meta property="og:title" content="Sweat the Small Stuff — HomeSurvey.ai Product Update">
+    <meta property="og:description" content="A retry button exactly where you need it, ready-for-review emails that carry the numbers, and a survey that opens with your logo.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/june-2026-roundup/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.roundup { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Failed-upload retry mock */
+        .retry-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; margin: 24px auto 12px; max-width: 460px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
+        .retry-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .retry-room { font-weight: 700; color: #101828; font-size: 0.95rem; }
+        .retry-flag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; background-color: #FEE2E2; color: #B91C1C; padding: 4px 11px; border-radius: 50px; }
+        .retry-body { font-size: 0.9rem; color: #4A5565; line-height: 1.6; margin: 0 0 14px; }
+        .retry-btn { font-size: 0.82rem; font-weight: 600; border-radius: 9px; padding: 9px 18px; display: inline-block; background-color: #7C3AED; color: #fff; }
+        .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        /* Ready-for-review email mock */
+        .email-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px 26px; margin: 24px auto 12px; max-width: 500px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
+        .email-sub { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 4px; }
+        .email-title { font-weight: 700; color: #101828; font-size: 1rem; margin-bottom: 14px; }
+        .email-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+        .email-stat { background-color: #F4F4F7; border-radius: 10px; padding: 12px 10px; text-align: center; }
+        .email-stat .n { font-size: 1.15rem; font-weight: 800; color: #101828; display: block; letter-spacing: -0.02em; }
+        .email-stat .l { font-size: 0.66rem; font-weight: 700; color: #4A5565; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-top: 2px; }
+        .email-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+        .email-bullets li { font-size: 0.87rem; color: #4A5565; line-height: 1.5; padding-left: 18px; position: relative; }
+        .email-bullets li::before { content: "•"; color: #7C3AED; font-weight: 800; position: absolute; left: 4px; }
+        .email-new { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; background-color: #F3E8FF; color: #6D28D9; padding: 3px 9px; border-radius: 50px; margin-left: 6px; vertical-align: middle; }
+
+        /* Welcome screen mock */
+        .welcome-mock { background-color: #1E1145; border-radius: 16px; padding: 30px 24px; margin: 24px auto 12px; max-width: 340px; text-align: center; box-shadow: 0 12px 40px rgba(30,17,69,0.18); }
+        .welcome-logo { width: 54px; height: 54px; border-radius: 14px; background-color: #7C3AED; color: #fff; font-weight: 800; font-size: 1.3rem; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+        .welcome-co { color: #fff; font-weight: 700; font-size: 1.05rem; margin-bottom: 2px; }
+        .welcome-rep { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-bottom: 16px; }
+        .welcome-btn { display: inline-block; background-color: #F59E0B; color: #1E1145; font-weight: 700; font-size: 0.85rem; padding: 10px 22px; border-radius: 50px; }
+
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .email-stats { grid-template-columns: repeat(3, 1fr); }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="/articles/img/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Improvement">Improvement</span>
+        <span class="type-badge roundup">June Roundup</span>
+        <span class="date">June 30, 2026</span>
+    </div>
+    <h1>Sweat the Small Stuff</h1>
+    <p class="tagline">A retry button exactly where you need it, ready-for-review emails that carry the numbers, and a survey that opens with your logo. June&rsquo;s quality batch.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- THE BASEMENT -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Fix That Started in a Basement</p>
+        <h2>Failed Upload? Retry It Right There.</h2>
+        <p>This one came straight from the field. A crew member was capturing a customer&rsquo;s basement when the images failed to upload &mdash; and there was no way to retry without starting the room over, standing in the customer&rsquo;s home.</p>
+        <p>Now the retry lives on the failed upload itself. One tap, same room, no do-over.</p>
+
+        <div class="retry-mock" role="img" aria-label="A failed room upload with a Retry Upload button directly on the failed item">
+            <div class="retry-head">
+                <span class="retry-room">Basement &mdash; 4 photos</span>
+                <span class="retry-flag">Upload failed</span>
+            </div>
+            <p class="retry-body">Connection dropped before the upload finished. Your captures are safe on this device.</p>
+            <span class="retry-btn">&#8635; Retry Upload</span>
+        </div>
+        <p class="mock-caption">The retry is on the failed message itself &mdash; where you&rsquo;re standing when you need it.</p>
+
+        <div class="anaphora">
+            <p>Basements have bad signal.</p>
+            <p>Garages have worse.</p>
+            <p class="climax">The retry button now lives where the signal dies.</p>
+        </div>
+    </div>
+
+    <!-- THE EMAIL -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Triage From the Inbox</p>
+        <h2>The Ready-for-Review Email Grew Up</h2>
+        <p>When a survey finishes processing, the ready-for-review email now carries what a rep actually triages on: the <strong>complexity score</strong>, <strong>crew size</strong>, and <strong>total hours</strong>, plus the AI summary&rsquo;s key bullets &mdash; in both HomeSurvey.ai and the CRM. You know what kind of move you&rsquo;re opening before you click.</p>
+
+        <div class="email-mock" role="img" aria-label="A ready-for-review email showing complexity, crew size, total hours and AI summary bullets">
+            <div class="email-sub">Ready for Review &middot; HomeSurvey.ai</div>
+            <div class="email-title">Sarah Mitchell&rsquo;s inventory is ready <span class="email-new">Upgraded</span></div>
+            <div class="email-stats">
+                <div class="email-stat"><span class="n">Moderate</span><span class="l">Complexity</span></div>
+                <div class="email-stat"><span class="n">3</span><span class="l">Crew Size</span></div>
+                <div class="email-stat"><span class="n">6.5</span><span class="l">Est. Hours</span></div>
+            </div>
+            <ul class="email-bullets">
+                <li>74 items across 6 rooms &mdash; 812 cu ft / 5,690 lbs</li>
+                <li>Piano in living room flagged for special handling</li>
+                <li>Garage roughly 30% packed by owner; balance needs cartons</li>
+            </ul>
+        </div>
+        <p class="mock-caption">Complexity, crew, hours, and the AI&rsquo;s key notes &mdash; before you open the dashboard.</p>
+    </div>
+
+    <!-- THE WELCOME -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">First Impressions</p>
+        <h2>Your Logo Opens the Survey</h2>
+        <p>The survey link is often the first thing your customer ever clicks from you. The welcome screen now shows <strong>your company logo and your sales rep&rsquo;s name</strong> &mdash; so the link feels like it came from the mover they just spoke to, not from a piece of software they&rsquo;ve never heard of.</p>
+
+        <div class="welcome-mock" role="img" aria-label="The survey welcome screen showing the moving company's logo and the sales rep's name">
+            <div class="welcome-logo">AM</div>
+            <div class="welcome-co">Apex Moving &amp; Storage</div>
+            <div class="welcome-rep">Your rep: Daniel Reyes</div>
+            <span class="welcome-btn">Start My Survey</span>
+        </div>
+        <p class="mock-caption">Your brand and your rep, on the first screen the customer sees.</p>
+    </div>
+
+    <!-- ALSO IN JUNE -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Also in June</p>
+        <h2>The Rest of the Batch</h2>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">📄</span>
+                <h4>PDF at Your Fingertips</h4>
+                <p>Finish reviewing a survey and the dashboard offers the PDF download on the spot &mdash; no hunting for the export.</p>
+            </div>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">🔢</span>
+                <h4>Cleaner Report Numbers</h4>
+                <p>Number formatting in the survey PDF footer tightened up, based on customer feedback.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">❓</span>
+                <h4>Questionnaire FAQs</h4>
+                <p>The FAQs customers see now cover the pre-survey questionnaire, so fewer &ldquo;what&rsquo;s this question for?&rdquo; calls.</p>
+            </div>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">➖</span>
+                <h4>&ldquo;None&rdquo; Is an Answer</h4>
+                <p>Move type now includes a None option in Send Link and Upload Media &mdash; for surveys that don&rsquo;t fit a bucket yet.</p>
+            </div>
+        </div>
+        <p>None of these change your workflow. All of them remove a paper cut you&rsquo;d have hit this month.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Death to paper cuts.</h3>
+        <p>Every fix here is already live on your dashboard. Not surveying with HomeSurvey.ai yet? Your first one is free.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Moves, By the Book — Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="HomeSurvey.ai adds a dedicated Military move flag and a Pro-Gear PDF: professional gear weighed item by item, totaled against PBP&E limits, and documented for the move file.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/military-moves-pro-gear-pdf/">
+    <meta property="og:title" content="Military Moves, By the Book — HomeSurvey.ai Product Update">
+    <meta property="og:description" content="A dedicated Military move flag, and Pro-Gear weighed, itemized, and documented in its own PDF — before the move file needs it.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/military-moves-pro-gear-pdf/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.military { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        .outcome-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .outcome-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; }
+        .outcome-list .icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; margin-top: 2px; }
+        .outcome-list .icon.orange { background-color: #FFF7ED; color: #EA580C; }
+        .outcome-list .icon.purple { background-color: #F3E8FF; color: #7C3AED; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Send-link military row mock */
+        .send-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; margin: 24px auto 12px; max-width: 480px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
+        .send-mock-title { font-weight: 700; color: #101828; font-size: 0.95rem; margin-bottom: 14px; }
+        .send-row { display: flex; align-items: center; gap: 14px; }
+        .send-select { flex: 1; border: 1px solid #e2e8f0; border-radius: 9px; padding: 10px 13px; font-size: 0.9rem; color: #101828; display: flex; justify-content: space-between; align-items: center; }
+        .send-check { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #101828; font-weight: 600; white-space: nowrap; }
+        .send-checkbox { width: 18px; height: 18px; border-radius: 5px; background-color: #7C3AED; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; }
+        .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        /* Pro-Gear PDF mock */
+        .pdf-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 26px 28px; margin: 24px auto 12px; max-width: 520px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
+        .pdf-mock-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1E1145; padding-bottom: 10px; margin-bottom: 14px; }
+        .pdf-mock-title { font-weight: 800; color: #1E1145; font-size: 1rem; letter-spacing: -0.01em; }
+        .pdf-mock-sub { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; }
+        .pdf-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: #101828; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+        .pdf-row .w { font-weight: 600; font-variant-numeric: tabular-nums; }
+        .pdf-total { display: flex; justify-content: space-between; padding: 12px 0 0; font-size: 0.92rem; font-weight: 700; color: #101828; }
+        .pdf-limit { font-size: 0.78rem; color: #16A34A; font-weight: 700; text-align: right; margin-top: 2px; }
+        .pdf-limit.spouse { color: #16A34A; }
+
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+            .send-row { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="/articles/img/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Feature">New Feature</span>
+        <span class="type-badge military">Military</span>
+        <span class="date">June 4, 2026</span>
+    </div>
+    <h1>Military Moves, By the Book</h1>
+    <p class="tagline">A dedicated Military move flag, and pro-gear weighed, itemized, and documented in its own PDF &mdash; before the move file needs it.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- THE STAKES -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Stakes</p>
+        <h2>Pro-Gear Isn&rsquo;t Just Another Box</h2>
+        <p>On a military move, professional gear &mdash; PBP&amp;E: the books, papers, and equipment a service member needs for the job &mdash; is weighed separately and doesn&rsquo;t count against the household-goods weight allowance. Up to <strong>2,000 lbs for the member</strong> and <strong>500 lbs for the spouse</strong> ride outside the allowance.</p>
+        <div class="anaphora">
+            <p>If it&rsquo;s documented, it&rsquo;s protected weight.</p>
+            <p>If it&rsquo;s guessed, it&rsquo;s an argument.</p>
+            <p class="climax">If it&rsquo;s missing from the file, it&rsquo;s the mover&rsquo;s problem.</p>
+        </div>
+        <p>Every pound of pro-gear that goes uncounted at survey time turns into a dispute at the scale &mdash; and the paperwork burden lands on your ops team, after the truck is already loaded.</p>
+    </div>
+
+    <!-- WHAT'S NEW -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What&rsquo;s New</p>
+        <h2>A Move That Knows It&rsquo;s Military</h2>
+        <p>Sending a survey link for a military shipment is now one checkbox. Flag the move as military at send, and the whole survey behaves accordingly &mdash; including the <a href="/articles/custom-questionnaire/">pre-survey questionnaire</a>&rsquo;s dedicated pro-gear section, which captures PBP&amp;E from the customer before the AI even runs.</p>
+
+        <div class="send-mock" role="img" aria-label="The Generate Survey Link form with the Military Move checkbox checked next to the move type">
+            <div class="send-mock-title">Generate Survey Link</div>
+            <div class="send-row">
+                <div class="send-select">Interstate <span style="color:#94a3b8;">&#9662;</span></div>
+                <div class="send-check"><span class="send-checkbox">&#10003;</span> Military Move</div>
+            </div>
+        </div>
+        <p class="mock-caption">One checkbox at send &mdash; the survey handles the rest.</p>
+    </div>
+
+    <!-- THE PDF -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Paperwork</p>
+        <h2>The Pro-Gear PDF: Weighed, Itemized, Filed</h2>
+        <p>The centerpiece of this release: HomeSurvey.ai now generates a dedicated <strong>Pro-Gear PDF</strong> from the survey. Every pro-gear item, its weight, and running totals against the member and spouse limits &mdash; in a document you can drop straight into the move file.</p>
+
+        <div class="pdf-mock" role="img" aria-label="A Pro-Gear PDF summary with itemized weights and totals against PBP&E limits">
+            <div class="pdf-mock-head">
+                <span class="pdf-mock-title">Pro-Gear Summary</span>
+                <span class="pdf-mock-sub">Survey SV000214</span>
+            </div>
+            <div class="pdf-row"><span>Field equipment case</span><span class="w">240 lbs</span></div>
+            <div class="pdf-row"><span>Reference library (4 cartons)</span><span class="w">120 lbs</span></div>
+            <div class="pdf-row"><span>Toolbox &amp; instruments</span><span class="w">85 lbs</span></div>
+            <div class="pdf-row"><span>Spouse &mdash; professional materials</span><span class="w">60 lbs</span></div>
+            <div class="pdf-total"><span>Member pro-gear</span><span>445 / 2,000 lbs</span></div>
+            <div class="pdf-limit">&#10003; Within allowance</div>
+            <div class="pdf-total"><span>Spouse pro-gear</span><span>60 / 500 lbs</span></div>
+            <div class="pdf-limit spouse">&#10003; Within allowance</div>
+        </div>
+        <p class="mock-caption">Item by item, with totals your TSP paperwork can lean on.</p>
+
+        <p>When carton counts get argued about, the side with the itemized list wins. Now that list generates itself.</p>
+    </div>
+
+    <!-- WHY IT MATTERS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Why It Matters</p>
+        <h2>Military Work Is Won on Paperwork</h2>
+        <ul class="outcome-list">
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Undocumented pro-gear costs someone.</strong> Either the member loses allowance, or the mover eats the dispute.</span>
+            </li>
+            <li>
+                <span class="icon orange">&#9888;</span>
+                <span><strong>Manual pro-gear worksheets don&rsquo;t scale.</strong> Peak-season military volume buries an ops team that documents by hand.</span>
+            </li>
+            <li>
+                <span class="icon purple">&#9733;</span>
+                <span><strong>Clean PBP&amp;E documentation is a differentiator.</strong> Agents and TSPs route work to movers who make their paperwork easy.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ALSO INCLUDED -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Also Included</p>
+        <h2>Everything in This Release</h2>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">🎖️</span>
+                <h4>Military Move Flag</h4>
+                <p>A dedicated military designation at send &mdash; no more improvising with service-type workarounds.</p>
+            </div>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">📄</span>
+                <h4>Pro-Gear PDF</h4>
+                <p>Itemized pro-gear with weights and totals against the 2,000 / 500 lb limits, generated from the survey.</p>
+            </div>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">🔗</span>
+                <h4>CRM Parity</h4>
+                <p>The same Pro-Gear PDF also generates inside Movegistics CRM, so both workflows produce the same file.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">🧮</span>
+                <h4>Counts That Agree</h4>
+                <p>Pro-gear totals now match everywhere they appear &mdash; AI summary, header stats, and dashboard filters.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Run a military survey the easy way.</h3>
+        <p>Flag the move, send the link, and let the survey build the inventory &mdash; pro-gear documented from day one.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>

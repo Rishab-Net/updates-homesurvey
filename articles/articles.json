@@ -1,5 +1,27 @@
 [
   {
+    "slug": "inventory-control-photos-appendix",
+    "title": "Your Inventory, Your Call",
+    "tagline": "Override weights, filter by tags, pick the right photo, and ship a Photos Appendix in the survey PDF — five features off one working mover's punch list.",
+    "type": "Feature",
+    "secondaryType": "Customer-Driven",
+    "publishedAt": "2026-07-03T10:00:00-04:00",
+    "published": true,
+    "keywords": ["weight override", "sync weight volume", "density", "tags", "tag filter", "custom tags", "item photo", "video frame", "gallery", "photos appendix", "PDF image tags", "heavy", "pre-existing damage", "survey PDF", "report", "HVI", "high value items", "pro-gear counts", "specialty items", "customer feedback", "paid plans"],
+    "summary": "Five customer-driven inventory upgrades: a Sync Weight & Volume checkbox that lets reps override weight independent of volume (item header and AI summary show the override), tag-based filtering of the item list, selectable item photos (video frame, gallery, or camera — ending the random-photo bug on manual items), and a tag-driven Photos Appendix in the survey PDF (configure tags under Settings → Organization → PDF Image Tags; paid plans). Plus fixes: HVI and pro-gear count mismatches, item deletions from search now persist, and TVs, lamps, mirrors, and artwork categorize correctly."
+  },
+  {
+    "slug": "june-2026-roundup",
+    "title": "Sweat the Small Stuff",
+    "tagline": "A retry button exactly where you need it, ready-for-review emails that carry the numbers, and a survey that opens with your logo. June's quality batch.",
+    "type": "Improvement",
+    "secondaryType": "Roundup",
+    "publishedAt": "2026-06-30T10:00:00-04:00",
+    "published": true,
+    "keywords": ["retry upload", "failed upload", "basement", "ready for review", "email", "complexity score", "crew size", "total hours", "AI summary bullets", "welcome screen", "logo", "sales rep", "branding", "PDF download", "number formatting", "FAQ", "none move type", "roundup", "quality"],
+    "summary": "June's quality batch: failed room uploads now show a Retry button on the failed item itself (born from a crew member's basement capture with no signal), ready-for-review emails carry complexity score, crew size, total hours and the AI summary's key bullets in both HomeSurvey.ai and the CRM, and the survey welcome screen shows the mover's logo and sales rep name. Also: PDF download prompt after review, cleaner PDF footer number formatting, questionnaire FAQs, and a None move-type option."
+  },
+  {
     "slug": "edit-survey-info-after-send",
     "title": "Sent the Link? You Can Still Fix It.",
     "tagline": "Edit survey details after the link goes out, pin every survey to an address, and take a new account from signup to first survey in 90 seconds.",
@@ -8,6 +30,17 @@
     "published": true,
     "keywords": ["edit survey info", "edit after send", "survey link", "typo", "customer email", "customer name", "survey address", "send link", "move type", "onboarding", "first survey", "90 seconds", "guided first run", "empty state", "in-product help", "upload reliability", "new feature", "workflow"],
     "summary": "Every survey now has an Edit Survey Info action: fix the customer name, email, address, and notes after the link is sent — the link keeps working, no void-and-resend. Move type deliberately locks at send. The Generate Survey Link form now takes an optional survey address, and a rebuilt first-run experience takes new accounts from signup to first survey in 90 seconds with guided steps, no empty states, and in-product help. Plus: long video uploads no longer fail when browser storage fills mid-upload."
+  },
+  {
+    "slug": "military-moves-pro-gear-pdf",
+    "title": "Military Moves, By the Book",
+    "tagline": "A dedicated Military move flag, and pro-gear weighed, itemized, and documented in its own PDF — before the move file needs it.",
+    "type": "Feature",
+    "secondaryType": "Military",
+    "publishedAt": "2026-06-04T10:00:00-04:00",
+    "published": true,
+    "keywords": ["military", "military move", "pro-gear", "pro gear", "PBP&E", "professional gear", "PDF", "weight allowance", "2000 lbs", "500 lbs", "spouse", "TSP", "GSA", "paperwork", "documentation", "move type", "checkbox", "CRM parity"],
+    "summary": "Military moves get first-class treatment: a dedicated Military Move flag on the Generate Survey Link form, and a Pro-Gear PDF generated from the survey — every PBP&E item weighed and itemized, with running totals against the 2,000 lb member / 500 lb spouse allowances, ready for the move file. The same PDF also generates in Movegistics CRM, and pro-gear counts now agree across the AI summary, header stats, and dashboard filters."
   },
   {
     "slug": "accuracy-upgrade-garage-kitchen",

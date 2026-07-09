@@ -7,7 +7,25 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://updates.homesurvey.ai/articles/inventory-control-photos-appendix/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://updates.homesurvey.ai/articles/june-2026-roundup/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://updates.homesurvey.ai/articles/edit-survey-info-after-send/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://updates.homesurvey.ai/articles/military-moves-pro-gear-pdf/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
