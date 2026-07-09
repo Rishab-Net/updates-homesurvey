@@ -1,5 +1,15 @@
 [
   {
+    "slug": "edit-survey-info-after-send",
+    "title": "Sent the Link? You Can Still Fix It.",
+    "tagline": "Edit survey details after the link goes out, pin every survey to an address, and take a new account from signup to first survey in 90 seconds.",
+    "type": "Feature",
+    "publishedAt": "2026-06-19T10:00:00-04:00",
+    "published": true,
+    "keywords": ["edit survey info", "edit after send", "survey link", "typo", "customer email", "customer name", "survey address", "send link", "move type", "onboarding", "first survey", "90 seconds", "guided first run", "empty state", "in-product help", "upload reliability", "new feature", "workflow"],
+    "summary": "Every survey now has an Edit Survey Info action: fix the customer name, email, address, and notes after the link is sent — the link keeps working, no void-and-resend. Move type deliberately locks at send. The Generate Survey Link form now takes an optional survey address, and a rebuilt first-run experience takes new accounts from signup to first survey in 90 seconds with guided steps, no empty states, and in-product help. Plus: long video uploads no longer fail when browser storage fills mid-upload."
+  },
+  {
     "slug": "accuracy-upgrade-garage-kitchen",
     "title": "The Margin Is in the Clutter",
     "tagline": "The same home, 24 more billable cartons. The AI survey is now sharper where the clutter — and the cartons — hide: the garage and the kitchen.",

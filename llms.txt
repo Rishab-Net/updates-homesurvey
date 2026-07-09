@@ -9,6 +9,8 @@
 
 - [All Updates](https://updates.homesurvey.ai/): Searchable, filterable listing of all product announcements. Supports keyword search and article type filtering (Feature, Improvement, Sample, Fix, Integration).
 
+- [Sent the Link? You Can Still Fix It.](https://updates.homesurvey.ai/articles/edit-survey-info-after-send/): New Feature — every survey now has an Edit Survey Info action: fix customer name, email, address, internal note, and survey note after the link is sent, with the link still working (no void-and-resend). Move type deliberately locks at send. The Generate Survey Link form adds an optional survey address field. A rebuilt first-run experience takes new accounts from signup to first survey in 90 seconds: guided first run, no empty states, in-product help. Also: long video uploads no longer fail when browser storage fills mid-upload.
+
 - [The Margin Is in the Clutter](https://updates.homesurvey.ai/articles/accuracy-upgrade-garage-kitchen/): Improvement — Accuracy upgrade for the AI virtual moving survey, focused on the high-clutter rooms. Nearly 100 new item types led by garage and kitchen, 15-23% more items captured per home, 20%+ sharper exclusions, and cross-video duplicate detection. Side-by-side on the same property: 320→394 items, 129→153 billable cartons (+24). Automatic on every new survey, no workflow changes.
 
 - [Custom Questionnaire](https://updates.homesurvey.ai/articles/custom-questionnaire/): New Feature — configure move-type-specific pre-survey questions with branching logic. 12 move types, 10 field types, cross-validation between customer answers and AI detections. Customer answers flow into the AI pipeline as hints and surface in the review dashboard.

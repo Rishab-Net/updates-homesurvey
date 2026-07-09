@@ -101,6 +101,37 @@ The Interactive AI Move Summary generates a complete move playbook after invento
 
 ---
 
+## Feature: Sent the Link? You Can Still Fix It. (Edit Survey Info + Guided Onboarding)
+**Released:** June 19, 2026
+**Type:** New Feature + Workflow
+**URL:** https://updates.homesurvey.ai/articles/edit-survey-info-after-send/
+
+### Overview
+A workflow release focused on removing friction at both ends of the survey lifecycle: fixing details after a survey link is sent, and getting brand-new accounts to their first survey faster. Previously, survey details were frozen once a link was generated — the only fix for a typo was creating a new survey and resending the link.
+
+### How It Works
+1. Every survey in the dashboard now has an Edit Survey Info action.
+2. Editable after send: customer name, customer email, address, internal note, and survey note. The survey link keeps working — no void-and-resend.
+3. Move type deliberately locks once the link is sent, because pre-survey questions and downstream handling depend on it.
+4. The Generate Survey Link form now includes an optional survey address field, pinning each survey to a property from creation.
+5. New accounts get a rebuilt first-run experience: a guided path to the first survey, contextual empty states on unused screens, and in-product help inside the dashboard.
+
+### Key Capabilities
+- **Edit After Send:** Customer name, email, address, internal note, and survey note are all editable on a live survey.
+- **Deliberate Move-Type Lock:** Move type is set at send and locked after, protecting questionnaire logic and downstream handling.
+- **Survey Address at Send:** Optional address field in the Generate Survey Link form (alongside customer name, email, move type, and internal note).
+- **Guided First Run:** Step-by-step path from empty dashboard to first survey — targeted at 90 seconds from signup to first link sent.
+- **Contextual Empty States:** Unused screens explain what belongs there instead of showing blank tables.
+- **In-Product Help:** Help content surfaces inside the dashboard, next to the feature in question.
+- **Upload Reliability:** Video/photo uploads no longer fail when browser storage fills mid-upload on long walkthroughs.
+
+### Business Outcomes
+- Typos in customer details no longer require an awkward void-and-resend in front of the customer.
+- Surveys are pinned to the right property from creation, reducing mix-ups across a full pipeline.
+- New teams reach their first AI survey in about 90 seconds, shortening time-to-value on trials.
+
+---
+
 ## Improvement: The Margin Is in the Clutter (Accuracy Upgrade)
 **Released:** May 31, 2026
 **Type:** Improvement + Accuracy Upgrade

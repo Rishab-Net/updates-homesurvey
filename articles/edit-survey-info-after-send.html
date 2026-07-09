@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sent the Link? You Can Still Fix It. — Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="HomeSurvey.ai now lets you edit survey details after the link is sent — customer name, email, address, and notes. Plus: a survey address on every send, and guided onboarding that takes new accounts from signup to first survey in 90 seconds.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/edit-survey-info-after-send/">
+    <meta property="og:title" content="Sent the Link? You Can Still Fix It. — HomeSurvey.ai Product Update">
+    <meta property="og:description" content="Edit survey details after the link goes out, pin every survey to an address, and go from signup to first survey in 90 seconds.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/edit-survey-info-after-send/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        /* Hero */
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        /* Badge */
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.Fix { background-color: #16A34A !important; }
+        .type-badge.workflow { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        /* Article body */
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+
+        /* Section */
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        /* Anaphora */
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        /* Outcome list */
+        .outcome-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .outcome-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; }
+        .outcome-list .icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; margin-top: 2px; }
+        .outcome-list .icon.green { background-color: #DCFCE7; color: #16A34A; }
+        .outcome-list .icon.purple { background-color: #F3E8FF; color: #7C3AED; }
+        .outcome-list .icon.orange { background-color: #FFF7ED; color: #EA580C; }
+
+        /* Feature cards grid */
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Modal mock — mirrors the live Edit Survey Info dialog */
+        .modal-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; margin: 24px 0 12px; max-width: 480px; margin-left: auto; margin-right: auto; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
+        .modal-mock-title { font-weight: 700; color: #101828; font-size: 1.05rem; margin-bottom: 18px; }
+        .mock-field { margin-bottom: 14px; }
+        .mock-field label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 5px; }
+        .mock-input { border: 1px solid #e2e8f0; border-radius: 9px; padding: 10px 13px; font-size: 0.9rem; color: #101828; background-color: #fff; }
+        .mock-input.edited { border-color: #7C3AED; background-color: #FBF7FF; }
+        .mock-input.locked { background-color: #F4F4F7; color: #94a3b8; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .mock-lock { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; background-color: #F4F4F7; color: #6b7280; border: 1px solid #e2e8f0; padding: 2px 9px; border-radius: 50px; white-space: nowrap; }
+        .mock-edit-note { font-size: 0.78rem; color: #7C3AED; font-weight: 600; margin-top: 4px; }
+        .mock-strike { color: #94a3b8; text-decoration: line-through; margin-right: 6px; }
+        .mock-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+        .mock-btn { font-size: 0.82rem; font-weight: 600; border-radius: 9px; padding: 9px 18px; display: inline-block; }
+        .mock-btn.primary { background-color: #7C3AED; color: #fff; }
+        .mock-btn.ghost { background-color: #fff; border: 1px solid #e2e8f0; color: #101828; }
+        .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        /* Editable-fields chip row */
+        .chip-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
+        .flag { display: inline-block; padding: 4px 11px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em; }
+        .flag.new  { background-color: #F3E8FF; color: #6D28D9; }
+        .flag.base { background-color: #FFFFFF; color: #4A5565; border: 1px solid #e2e8f0; }
+        .flag.locked { background-color: #F4F4F7; color: #94a3b8; border: 1px solid #e2e8f0; }
+
+        /* 90-second steps */
+        .steps { counter-reset: step; display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+        .step { display: flex; gap: 14px; align-items: flex-start; background-color: #F4F4F7; border-radius: 12px; padding: 18px 20px; }
+        .step-num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background-color: #7C3AED; color: #fff; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .step h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 4px; }
+        .step p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* CTA band */
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="/articles/img/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Feature">New Feature</span>
+        <span class="type-badge workflow">Workflow</span>
+        <span class="date">June 19, 2026</span>
+    </div>
+    <h1>Sent the Link? You Can Still Fix It.</h1>
+    <p class="tagline">Edit survey details after the link goes out, pin every survey to an address, and take a brand-new account from signup to first survey in 90 seconds.</p>
+</section>
+
+<article class="article-body">
+
+    <!-- THE PROBLEM -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Problem</p>
+        <h2>The Link Is Out. The Email Has a Typo.</h2>
+        <p>Survey links move fast. A rep takes a call, keys in the details, and the link is in the customer&rsquo;s inbox before the call ends. That speed is the point &mdash; but it also means a transposed letter in an email address, a misspelled name, or a missing note travels with the survey.</p>
+        <div class="anaphora">
+            <p>The customer&rsquo;s name is on every page of the report.</p>
+            <p>The email is where the link actually lands.</p>
+            <p class="climax">And until now, none of it could be fixed without starting over.</p>
+        </div>
+        <p>Once a link was generated, the details behind it were frozen. The only fix was to create a new survey and resend &mdash; an awkward do-over in front of the customer you&rsquo;re trying to win.</p>
+    </div>
+
+    <!-- WHAT'S NEW -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">What&rsquo;s New</p>
+        <h2>Edit Survey Info &mdash; After the Link Is Sent</h2>
+        <p>Every survey in your dashboard now has an <strong>Edit Survey Info</strong> action. Open it, fix the detail, hit Save. The survey link keeps working &mdash; no void, no resend, no second email to explain the first one.</p>
+
+        <div class="modal-mock" role="img" aria-label="The Edit Survey Info dialog with customer name, email, address, and notes fields">
+            <div class="modal-mock-title">Edit Survey Info</div>
+            <div class="mock-field">
+                <label>Customer Name</label>
+                <div class="mock-input">Sarah Mitchell</div>
+            </div>
+            <div class="mock-field">
+                <label>Customer Email</label>
+                <div class="mock-input edited"><span class="mock-strike">sarah.mitchel@gmail.com</span>sarah.mitchell@gmail.com</div>
+                <div class="mock-edit-note">Fixed &mdash; after the link was sent</div>
+            </div>
+            <div class="mock-field">
+                <label>Address</label>
+                <div class="mock-input">2847 Juniper Lane, Walnut Creek, CA</div>
+            </div>
+            <div class="mock-field">
+                <label>Move Type</label>
+                <div class="mock-input locked">Interstate <span class="mock-lock">Locked after send</span></div>
+            </div>
+            <div class="mock-field">
+                <label>Internal Note</label>
+                <div class="mock-input">Referred by Hayes family &mdash; priority</div>
+            </div>
+            <div class="mock-field">
+                <label>Survey Note</label>
+                <div class="mock-input">Please include the garage &amp; shed</div>
+            </div>
+            <div class="mock-actions">
+                <span class="mock-btn ghost">Cancel</span>
+                <span class="mock-btn primary">Save</span>
+            </div>
+        </div>
+        <p class="mock-caption">Fix the details without breaking the link.</p>
+
+        <h3>What you can edit</h3>
+        <div class="chip-row" style="margin-bottom:16px;">
+            <span class="flag new">Customer name</span>
+            <span class="flag new">Customer email</span>
+            <span class="flag new">Address</span>
+            <span class="flag new">Internal note</span>
+            <span class="flag new">Survey note</span>
+            <span class="flag locked">Move type &mdash; locked after send</span>
+        </div>
+        <p>One deliberate exception: <strong>move type locks when the link goes out.</strong> Pre-survey questions and downstream handling depend on it, so changing it mid-survey would pull the rug out from under the customer&rsquo;s walkthrough. Set it right at send &mdash; everything else stays fixable.</p>
+    </div>
+
+    <!-- SMARTER SEND -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Smarter Send</p>
+        <h2>Every Survey Starts With an Address</h2>
+        <p>The Generate Survey Link form now takes a <strong>survey address</strong> alongside the customer&rsquo;s name, email, and move type. It&rsquo;s optional &mdash; but when you add it, the survey is pinned to the right property from the moment it&rsquo;s created, instead of being just a name in a list.</p>
+        <p>Working a full pipeline of surveys, that&rsquo;s the difference between &ldquo;which Johnson is this?&rdquo; and knowing exactly which home you&rsquo;re looking at.</p>
+    </div>
+
+    <!-- FOR NEW TEAMS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">For New Teams</p>
+        <h2>From Signup to First Survey in 90 Seconds</h2>
+        <p>This release also rebuilds the first-run experience. A brand-new HomeSurvey.ai account no longer lands on an empty dashboard and a blinking cursor &mdash; it lands on a guided path to its first survey:</p>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">1</span>
+                <div>
+                    <h4>Guided first run</h4>
+                    <p>The dashboard walks you through your first survey step by step &mdash; no manual, no guesswork about where to start.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <div>
+                    <h4>No more empty states</h4>
+                    <p>Every screen you haven&rsquo;t used yet explains what belongs there and how to fill it &mdash; instead of showing you a blank table.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <div>
+                    <h4>Help where you work</h4>
+                    <p>In-product help lives inside the dashboard, so answers show up next to the button in question &mdash; not in a separate tab.</p>
+                </div>
+            </div>
+        </div>
+        <p>The goal is simple: <strong>your first survey link, sent within 90 seconds of signing up.</strong> Send it to your own phone, walk your own hallway, and watch the AI build an inventory before you&rsquo;ve finished your coffee.</p>
+    </div>
+
+    <!-- ALSO IN THIS RELEASE -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Also in This Release</p>
+        <h2>Sturdier Where It Counts</h2>
+        <div class="feature-grid">
+            <div class="feature-card green">
+                <span class="feature-card-icon">📹</span>
+                <h4>Upload Reliability</h4>
+                <p>Long video walkthroughs no longer fail when browser storage fills up mid-upload. Big homes, long videos, no lost footage.</p>
+            </div>
+            <div class="feature-card purple">
+                <span class="feature-card-icon">⚡</span>
+                <h4>Live for Everyone</h4>
+                <p>All of the above is already on your dashboard &mdash; every account, no setup, no workflow changes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Ninety seconds to your first survey.</h3>
+        <p>Start free, send your first link, and see the AI build an estimate-ready inventory from a phone video. Typos included &mdash; you can fix those now.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &mdash; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>
