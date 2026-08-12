@@ -58,53 +58,11 @@
         .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
         .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
 
-        /* Item detail panel mock */
-        .panel-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; margin: 24px auto 12px; max-width: 480px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
-        .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-        .panel-title { font-weight: 700; color: #101828; font-size: 0.95rem; }
-        .conf-chip { font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; background-color: #DCFCE7; color: #166534; }
-        .evidence-toggle { display: inline-flex; border: 1px solid #e2e8f0; border-radius: 9px; overflow: hidden; margin-bottom: 14px; }
-        .evidence-toggle span { padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: #64748b; }
-        .evidence-toggle span.active { background-color: #7C3AED; color: #fff; }
-        .evidence-frame { height: 120px; border-radius: 10px; background: linear-gradient(135deg, #ede9fe, #ddd6fe); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 14px; }
-        .voice-row { display: flex; gap: 10px; align-items: flex-start; background-color: #F4F4F7; border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; }
-        .voice-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
-        .voice-row p { font-size: 0.82rem; color: #4A5565; margin: 0; line-height: 1.5; }
-        .voice-row p em { color: #101828; font-weight: 600; font-style: normal; }
-        .panel-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .panel-field label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 5px; }
-        .panel-input { border: 1px solid #e2e8f0; border-radius: 9px; padding: 9px 12px; font-size: 0.9rem; color: #101828; }
+        /* Product screenshots */
+        .shot { margin: 24px auto 12px; }
+        .shot img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1.5px solid #e2e8f0; box-shadow: 0 12px 40px rgba(30,17,69,0.14); }
+        .shot.phone img { max-width: 320px; margin: 0 auto; }
         .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
-
-        /* AI summary mock */
-        .summary-mock { background-color: #1E1145; border-radius: 16px; padding: 22px 24px; margin: 24px auto 12px; max-width: 480px; box-shadow: 0 12px 40px rgba(30,17,69,0.25); }
-        .summary-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-        .summary-title { font-weight: 700; color: #fff; font-size: 0.9rem; }
-        .summary-live { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #F59E0B; }
-        .summary-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
-        .summary-stat { text-align: center; }
-        .summary-stat .num { font-size: 1.15rem; font-weight: 800; color: #fff; }
-        .summary-stat .lbl { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); }
-        .complexity-row { display: flex; align-items: center; gap: 10px; }
-        .complexity-row .lbl { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.7); white-space: nowrap; }
-        .complexity-bar { flex: 1; height: 8px; border-radius: 4px; background-color: rgba(255,255,255,0.15); overflow: hidden; }
-        .complexity-fill { width: 60%; height: 100%; border-radius: 4px; background: linear-gradient(90deg, #7C3AED, #F59E0B); }
-        .complexity-row .val { font-size: 0.8rem; font-weight: 800; color: #F59E0B; }
-
-        /* Review Together mock */
-        .cosession-mock { background-color: #fff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; margin: 24px auto 12px; max-width: 500px; box-shadow: 0 12px 40px rgba(30,17,69,0.10); }
-        .cosession-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-        .cosession-title { font-weight: 700; color: #101828; font-size: 0.95rem; }
-        .live-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; background-color: #FEE2E2; color: #B91C1C; }
-        .live-dot { width: 7px; height: 7px; border-radius: 50%; background-color: #DC2626; }
-        .video-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-        .video-tile { position: relative; height: 110px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-        .video-tile.rep { background: linear-gradient(135deg, #ede9fe, #c4b5fd); }
-        .video-tile.cust { background: linear-gradient(135deg, #fef3c7, #fcd34d); }
-        .tile-label { position: absolute; bottom: 8px; left: 8px; font-size: 0.66rem; font-weight: 700; padding: 3px 9px; border-radius: 50px; background-color: rgba(30,17,69,0.75); color: #fff; }
-        .followme-row { display: flex; gap: 10px; align-items: center; background-color: #FBF7FF; border: 1.5px solid #DDD6FE; border-radius: 10px; padding: 10px 14px; }
-        .followme-row p { font-size: 0.82rem; color: #4A5565; margin: 0; line-height: 1.5; }
-        .followme-row p strong { color: #6D28D9; }
 
         .note-callout { background-color: #FBF7FF; border: 1.5px solid #DDD6FE; border-radius: 12px; padding: 14px 18px; font-size: 0.88rem; color: #4A5565; margin-top: 16px; }
         .note-callout strong { color: #6D28D9; }
@@ -165,29 +123,10 @@
         <h2>Every Item, One Panel, No Hunting</h2>
         <p>Dashboard V2 redesigns the review around the thing you actually do all day: working through items. Select any item and a detail panel brings the evidence to you &mdash; flip between the captured video frame and the video itself, hear the customer&rsquo;s voice note with its transcript alongside, check the AI&rsquo;s confidence, assign cartons, and apply tags or flags without leaving the panel.</p>
 
-        <div class="panel-mock" role="img" aria-label="The Dashboard V2 item detail panel showing photo and video evidence, a voice note transcript, and carton assignment">
-            <div class="panel-head">
-                <span class="panel-title">Sectional sofa &mdash; living room</span>
-                <span class="conf-chip">AI 95%</span>
-            </div>
-            <div class="evidence-toggle"><span class="active">Frame</span><span>Video</span></div>
-            <div class="evidence-frame">🛋️</div>
-            <div class="voice-row">
-                <span class="voice-icon">🎙️</span>
-                <p><em>Voice note:</em> &ldquo;The sofa goes, the rug under it stays.&rdquo;</p>
-            </div>
-            <div class="panel-fields">
-                <div class="panel-field">
-                    <label>Cartons</label>
-                    <div class="panel-input">None required</div>
-                </div>
-                <div class="panel-field">
-                    <label>Tags</label>
-                    <div class="panel-input">Heavy</div>
-                </div>
-            </div>
+        <div class="shot">
+            <img src="/articles/img/v2-item-detail-voice-note.webp" width="1600" height="931" alt="Dashboard V2 with the item detail panel open: source frame with the detected item outlined, the customer's voice note transcript, AI confidence, and excluded items struck through in the list" loading="lazy">
         </div>
-        <p class="mock-caption">Evidence, voice notes, and edits &mdash; together in one panel.</p>
+        <p class="mock-caption">The item panel in action: the customer said &ldquo;stays, as it is an appliance,&rdquo; and the toaster oven is excluded &mdash; with the source frame and AI confidence right beside it.</p>
 
         <p>And the whole review is <strong>keyboard-driven</strong>. Move through items, confirm, and edit without reaching for the mouse &mdash; the difference between a review that takes an evening and one that&rsquo;s done before your coffee is.</p>
 
@@ -222,24 +161,7 @@
         <h2>An AI Move Summary That Tracks Your Edits</h2>
         <p>The dashboard header now carries an <strong>AI Move Summary</strong>: shipped totals, a move complexity gauge, and a customer-ready narrative of the move. The totals update live as you edit &mdash; exclude the patio set and watch the numbers follow &mdash; while the narrative stays anchored to the original capture, clearly labeled so you always know which is which.</p>
 
-        <div class="summary-mock" role="img" aria-label="The AI Move Summary bar showing live shipped totals and a complexity gauge">
-            <div class="summary-head">
-                <span class="summary-title">AI Move Summary</span>
-                <span class="summary-live">&#9679; Reflects your edits</span>
-            </div>
-            <div class="summary-stats">
-                <div class="summary-stat"><div class="num">214</div><div class="lbl">Items</div></div>
-                <div class="summary-stat"><div class="num">61</div><div class="lbl">Cartons</div></div>
-                <div class="summary-stat"><div class="num">1,240</div><div class="lbl">Cu Ft</div></div>
-                <div class="summary-stat"><div class="num">8,680</div><div class="lbl">Lbs</div></div>
-            </div>
-            <div class="complexity-row">
-                <span class="lbl">Complexity</span>
-                <div class="complexity-bar"><div class="complexity-fill"></div></div>
-                <span class="val">6/10</span>
-            </div>
-        </div>
-        <p class="mock-caption">Edit the inventory. The totals keep up.</p>
+        <p>You can see it in the header of every screenshot on this page: total cube and weight, item and carton counts, and exclusions &mdash; live numbers, not a snapshot.</p>
     </div>
 
     <!-- REVIEW TOGETHER -->
@@ -248,22 +170,18 @@
         <p class="section-label">Review Together</p>
         <h2>Put Your Customer in the Room</h2>
         <p>Some conversations don&rsquo;t work over a phone call and a PDF. <strong>Review Together</strong> lets you invite the customer into a live co-review session: they open a link, and they&rsquo;re looking at the same survey you are &mdash; with a video call built right in. No third-party meeting app, no screen-share fiddling.</p>
+
+        <div class="shot">
+            <img src="/articles/img/v2-review-together-live-call.webp" width="1600" height="931" alt="A live Review Together session in Dashboard V2: rep and customer video tiles over the survey, follow-me on, working through the garage with an item open" loading="lazy">
+        </div>
+        <p class="mock-caption">A live session: video call in the corner, follow-me on, and the garage under review &mdash; one survey, two screens, zero &ldquo;can you see my screen?&rdquo;</p>
+
         <p>As you navigate, <strong>follow-me navigation</strong> keeps their view on yours &mdash; open the garage, they see the garage. Every edit you make syncs to their screen the moment you make it: &ldquo;the treadmill isn&rsquo;t coming? Watch, I&rsquo;m taking it off right now.&rdquo; The customer&rsquo;s view is read-only, so they can see everything and change nothing. Works on desktop and mobile, on both sides.</p>
 
-        <div class="cosession-mock" role="img" aria-label="A Review Together session with rep and customer video tiles and follow-me navigation">
-            <div class="cosession-head">
-                <span class="cosession-title">Review Together &mdash; Survey SV000214</span>
-                <span class="live-chip"><span class="live-dot"></span> Live</span>
-            </div>
-            <div class="video-tiles">
-                <div class="video-tile rep">🧑‍💼<span class="tile-label">Your Rep</span></div>
-                <div class="video-tile cust">🙂<span class="tile-label">Customer</span></div>
-            </div>
-            <div class="followme-row">
-                <p><strong>Follow-me is on</strong> &mdash; the customer sees every room and item you open, as you open it.</p>
-            </div>
+        <div class="shot phone">
+            <img src="/articles/img/v2-customer-phone-view.webp" width="900" height="1517" alt="The customer's phone during a Review Together session: the video call up top, the item being discussed below, and a banner reading Following your rep — click to browse freely" loading="lazy">
         </div>
-        <p class="mock-caption">One survey, two screens, zero &ldquo;can you see my screen?&rdquo;</p>
+        <p class="mock-caption">The customer&rsquo;s side, on their phone: &ldquo;Following your rep &mdash; click to browse freely.&rdquo;</p>
 
         <div class="note-callout"><strong>How invites work:</strong> send the session invite to the customer&rsquo;s email on file, or copy the session link and share it any way you like. Session links expire after 24 hours.</div>
     </div>
