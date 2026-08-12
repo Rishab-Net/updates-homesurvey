@@ -7,6 +7,62 @@ HomeSurvey.ai is an AI-powered virtual home survey platform for the moving indus
 
 ---
 
+## Feature: Review Faster. Review Together. (Dashboard V2 + Review Together)
+**Released:** August 12, 2026
+**Type:** New Feature
+
+### Overview
+Dashboard V2 is a redesigned survey review dashboard built around item-by-item review speed, and Review Together is a live co-review session that lets a rep bring the customer into the same survey with built-in video calling.
+
+### Dashboard V2 — How It Works
+1. Rep opens a survey and works the inventory in a dedicated item detail panel: toggle between the captured video frame and the video itself, listen to the customer's voice note with its transcript, check AI confidence, assign cartons, and apply tags or flags — all without leaving the panel.
+2. The review is keyboard-driven: step through items, confirm, and edit from the keyboard.
+3. The dashboard header carries an AI Move Summary: shipped totals (items, cartons, cubic feet, pounds) that update live as the rep edits, a move complexity gauge, and a customer-ready narrative of the move. The narrative stays anchored to the original capture and is labeled as such, while the numbers reflect edits.
+4. Full mobile support: the complete review works on a phone.
+5. The Classic dashboard remains available via a one-click switch, in both directions.
+6. Dashboard improvements now reach every survey instantly, including previously sent surveys — no per-survey regeneration.
+
+### Review Together — How It Works
+1. From the dashboard, the rep invites the customer into a live co-review session: send the invite to the customer's email on file, or copy the session link and share it directly. Session links expire after 24 hours.
+2. The customer opens the link and sees the same survey as the rep, with a built-in video call — no third-party meeting app or screen sharing.
+3. Follow-me navigation keeps the customer's view synced to the rep's: whatever room or item the rep opens, the customer sees.
+4. Edits sync live: exclusions, quantity changes, and other edits appear on the customer's screen as the rep makes them.
+5. The customer's view is read-only. Works on desktop and mobile on both sides.
+
+### Business Outcomes
+- Faster survey review: evidence, voice notes, and edits in one panel, driven from the keyboard.
+- Fewer disputes later: the customer watches the review happen and sees exclusions made in real time.
+- Reps can review or co-review from anywhere, including on a phone.
+
+---
+
+## Improvement: Uploaded Before You Hit Submit (August 2026 Roundup)
+**Released:** August 12, 2026
+**Type:** Improvement
+
+### Overview
+An August quality batch focused on the customer self-survey: early video compression and upload, a direct-to-Thank-You experience for submitted links, a dedicated crating section in the survey PDF, and a Survey Conversion card on the dashboard.
+
+### Media Upload Improvements
+- Videos start compressing and uploading the moment the customer records them, instead of waiting until Submit.
+- Videos over 60 MB are compressed first — one typical walkthrough video dropped from roughly 175 MB to 11 MB, about 15× smaller. Videos under 60 MB upload as they are.
+- If compression fails for any reason, the original video uploads instead, so nothing is lost.
+- By the end of the survey, most footage is already uploaded. Anything still in flight continues in the background while the customer keeps using the survey, and a dropped connection resumes where it stopped instead of starting over.
+
+### Submitted Survey Links
+- Already-submitted survey links now open directly to the Thank You screen, with no flash of the survey start page.
+- Customer details display more clearly and survey totals appear in a cleaner format.
+- The submitted information stays saved and visible after the page is refreshed or reopened.
+
+### Crating Section in the Survey PDF
+- Crated items now get a dedicated section in the survey PDF, calling out custom-crate work instead of leaving it in the general item list.
+
+### Survey Conversion Card
+- A new dashboard card shows how many customers completed their survey out of everyone who received a survey link (for example, 50 links sent, 20 surveys completed, 40% conversion).
+- Available in HomeSurvey.ai standalone.
+
+---
+
 ## Feature: Custom Questionnaire
 **Released:** April 7, 2026
 **Type:** New Feature
