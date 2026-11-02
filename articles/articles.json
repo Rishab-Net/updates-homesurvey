@@ -2,7 +2,7 @@
   {
     "slug": "tags-cartons-cleaner-reports",
     "title": "Tags That Stick. Cartons You Can See Into.",
-    "tagline": "Clear out excluded items in one step, write a custom tag once for the whole survey, put photos in your tag summaries, and edit what goes into your cartons.",
+    "tagline": "Clear out excluded items in one step, write a custom tag once for the whole survey, put photos in your tag summaries, and see inside every carton.",
     "type": "Feature",
     "secondaryType": "Customer-Driven",
     "publishedAt": "2026-10-17T10:00:00-04:00",
@@ -27,9 +27,11 @@
       "survey conversion",
       "no links sent",
       "save draft",
-      "bug fixes"
+      "bug fixes",
+      "packed items",
+      "on report"
     ],
-    "summary": "A customer-driven October release for HomeSurvey.ai standalone. Hide every excluded item from the report or delete them all from the dashboard in one step. Custom tags now persist across the whole survey (with a one-off option) and carry descriptions; every tag shows a one-line tooltip on hover. Tag summary tables can include item photos (off by default). Cartonable items show the AI's detected outline on the source photo and their ship/exclude quantities, volume and weight are editable. Ship and Exclude are editable in the item detail panel; the More menu is regrouped (Room notes, then Survey, Export as and PDF report) with a confirmation before Reset to AI capture; the walkthrough sort is renamed Capture Order; Survey Conversion shows 'No links sent' instead of 0%. Fixes: Save Draft no longer opens Review Complete, Reset to AI capture no longer duplicates rows, Room sort hidden inside a single room, duplicate voice notes, carton capacity above 100%."
+    "summary": "A customer-driven October release for HomeSurvey.ai standalone. Hide every excluded item from the report or delete them all from the dashboard in one step. Custom tags now persist across the whole survey (with a one-off option) and carry descriptions; every tag shows a one-line tooltip on hover. Tag summary tables can include item photos (off by default). Items packed in a carton can be listed on the report with an On report tick, without changing totals. Cartonable items show the AI's detected outline on the source photo and their ship/exclude quantities, volume and weight are editable. Ship and Exclude are editable in the item detail panel; the More menu is regrouped (Room notes, then Survey, Export as and PDF report) with a confirmation before Reset to AI capture; the walkthrough sort is renamed Capture Order; Survey Conversion shows 'No links sent' instead of 0%. Fixes: Save Draft no longer opens Review Complete, Reset to AI capture no longer duplicates rows, Room sort hidden inside a single room, duplicate voice notes, carton capacity above 100%."
   },
   {
     "slug": "september-2026-roundup",

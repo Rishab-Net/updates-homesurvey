@@ -25,6 +25,7 @@ A customer-driven release built largely from one mover's feedback list: faster c
 - Tag summary tables can include each item's photo thumbnail. Toggle: More > Tag summary > Include item photos. Off by default.
 
 ### Cartons
+- Items packed inside a carton are normally left off the customer report because their volume travels with the carton. Each packed item now has an On report tick in the carton detail panel; ticking it lists the item on the report for reference. Display only: totals do not change.
 - Cartonable items show the AI's detected bounding box on the source photo frame.
 - Cartonable item ship quantity, exclude quantity, volume and weight are editable, and exclude quantity is shown alongside ship quantity.
 
