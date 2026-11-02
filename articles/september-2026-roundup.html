@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Photo Comes With It | Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="A new Excel export puts every item's photo in the row beside its description. Plus quoted amount and booked status on every survey, clearer dashboard statistics, and a Review Together badge on the survey list.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/september-2026-roundup/">
+    <meta property="og:title" content="The Photo Comes With It | HomeSurvey.ai Product Update">
+    <meta property="og:description" content="A new Excel export puts every item's photo in the row beside its description. Plus quoted amount and booked status on every survey, clearer dashboard statistics, and a Review Together badge on the survey list.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/september-2026-roundup/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.roundup, .type-badge.customer { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Product screenshots */
+        .shot { margin: 24px auto 12px; }
+        .shot img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1.5px solid #e2e8f0; box-shadow: 0 12px 40px rgba(30,17,69,0.14); }
+        .shot.phone img { max-width: 320px; margin: 0 auto; }
+        .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        .note-callout { background-color: #FBF7FF; border: 1.5px solid #DDD6FE; border-radius: 12px; padding: 14px 18px; font-size: 0.88rem; color: #4A5565; margin-top: 16px; }
+        .note-callout strong { color: #6D28D9; }
+
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        .section-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 24px; padding: 14px 18px; background-color: #F3EEFF; border-radius: 12px; }
+        .section-cta span { font-size: 0.9rem; color: #101828; font-weight: 600; }
+        .section-cta a { display: inline-flex; align-items: center; background-color: #7C3AED; color: #fff !important; padding: 9px 18px; border-radius: 50px; font-size: 0.88rem; font-weight: 600; text-decoration: none !important; white-space: nowrap; }
+        .section-cta a:hover { background-color: #5B21B6; }
+        .fix-list { list-style: none; margin: 8px 0 0; }
+        .fix-list li { position: relative; padding: 10px 0 10px 28px; border-bottom: 1px solid #EEF0F4; font-size: 0.95rem; color: #4A5565; }
+        .fix-list li:last-child { border-bottom: none; }
+        .fix-list li::before { content: '\2713'; position: absolute; left: 4px; top: 10px; color: #059669; font-weight: 700; }
+        .fix-list strong { color: #101828; }
+
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="/articles/img/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Improvement">Improvement</span>
+        <span class="type-badge roundup">September Roundup</span>
+        <span class="date">September 15, 2026</span>
+    </div>
+    <h1>The Photo Comes With It</h1>
+    <p class="tagline">A new Excel export puts every item&rsquo;s photo in the row beside its description. Plus quoted amount and booked status on every survey, clearer statistics, and a Review Together badge.</p>
+</section>
+
+<article class="article-body">
+    <!-- HS-89 EXCEL EXPORT -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">The Manual Step That&rsquo;s Gone</p>
+        <h2>Your Inventory, Photos Included</h2>
+        <p>Here is how one international mover was building his working spreadsheet before this release. Open the walkthrough video. Pause it. Screenshot the item. Paste the screenshot into a sheet. Type the description next to it. Move to the next item. Repeat, for every survey.</p>
+        <p>His team runs one spreadsheet for two jobs: reviewing insurance valuations with the customer, and handing a packing list to the crew with notes on anything that needs special handling. Both jobs need the picture and the description side by side. The product had both. It just had no way to hand them over together.</p>
+        <p>Now it does. Open <strong>&hellip; More</strong> and, under <strong>Export as</strong>, next to CSV, there is <strong>Excel (with photos)</strong>. The file has one row per item with <strong>the item&rsquo;s photo embedded in the row</strong>, beside its description, quantities, volume, weight and tags.</p>
+        <div class="anaphora">
+            <p>No pausing the video.</p>
+            <p>No screenshotting your own survey.</p>
+            <p class="climax">The photo is already in the row.</p>
+        </div>
+        <div class="shot phone">
+            <img src="/articles/img/oct-more-menu-grouped.webp" width="462" height="872" alt="The More menu with Export as CSV and Excel (with photos), and the PDF report options for Item photos and Tag summary" loading="lazy">
+        </div>
+        <p class="mock-caption">Excel sits next to CSV under Export as.</p>
+        <div class="shot">
+            <img src="/articles/img/excel-export-photos.webp" width="1513" height="784" alt="The exported Excel file open in a spreadsheet: one row per item with the item's photo embedded in the Photo column, beside room, category, quantities, volume, weight, tags and carton" loading="lazy">
+        </div>
+        <p class="mock-caption">One row per item, photo included, opened straight from the export.</p>
+        <p>Fourteen columns, in this order: Room, Item, Photo, Category, Qty Ship, Qty Excl, Volume, Weight, Tags, In Carton, Pro-Gear, Reviewed, Flagged, Notes. The header row comes with filters, so narrowing to one room or one tag is a click, not a formula. Quantities, volume and weight are real numbers, so a column total just works.</p>
+        <div class="note-callout"><strong>Export CSV has not changed.</strong> It is still there, still the same file. A CSV is plain text and cannot hold a picture, so Excel sits next to it as a second option. If your workflow runs on the CSV, nothing about it moved.</div>
+        <div class="section-cta"><span>Export your next survey with the photos already in it.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-75 SURVEY OUTCOME -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">After the Review</p>
+        <h2>Did It Book?</h2>
+        <p>A survey used to end at the inventory. What happened next, what you quoted and whether they went with you, lived in somebody&rsquo;s head or in another system. Standalone now keeps it on the survey itself: <strong>Quoted Amount</strong>, <strong>Move Date</strong>, <strong>Booked</strong> and <strong>Booked Date</strong>.</p>
+        <p>Move Date can be set right at the start, alongside the customer&rsquo;s name and email when you generate the survey link. It is optional if you don&rsquo;t know it yet.</p>
+        <p>Afterwards, the survey row&rsquo;s <strong>Actions</strong> menu opens Edit Info, where quoted amount, move date and booked status can be added or changed. Booked Date fills itself in the moment you tick Booked. </p>
+        <div class="shot phone">
+            <img src="/articles/img/sep-outcome-fields.webp" width="953" height="1259" alt="The Edit Survey Info panel with a quoted amount, a move date and Booked ticked, and the booked date filled in automatically" loading="lazy">
+        </div>
+        <p class="mock-caption">Quoted amount, move date and booked status, on the survey instead of in someone's head.</p>
+        <p>The same fields appear in the Review Complete window, right where you download or email the PDF. Fill them in if you have them, skip them if you don&rsquo;t.</p>
+        <div class="shot phone">
+            <img src="/articles/img/sep-review-complete.webp" width="997" height="1284" alt="The Review Complete window with Survey Details for move date, quoted amount and booked, above the Email PDF and Download PDF buttons" loading="lazy">
+        </div>
+        <p class="mock-caption">Log the outcome at the moment you send the report.</p>
+        <div class="note-callout"><strong>Note:</strong> survey outcome fields are in HomeSurvey.ai standalone. The Movegistics CRM already has its own flows for move date, quoted amount and booking.</div>
+        <div class="section-cta"><span>Track what your surveys turn into, starting with the next one.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-70 / HS-77 STATISTICS CARDS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Your Numbers, Laid Out</p>
+        <h2>Statistics That Explain Themselves</h2>
+        <p>The Statistics row on the standalone dashboard now reads left to right the way the work happens: <strong>Customer Links Sent</strong>, <strong>Customer Surveys Completed</strong>, <strong>Survey Conversion</strong>, <strong>Generated by AI</strong>, <strong>Reviewed by User</strong> and <strong>Survey Balance</strong>.</p>
+        <p>Generated by AI covers both sides of the work: surveys your customers complete and surveys your reps complete. Hover over the card to see the split, so you know where your inventories are coming from.</p>
+        <div class="shot">
+            <img src="/articles/img/sep-stats-cards.webp" width="1600" height="182" alt="The Statistics row with six cards, and the Generated by AI card showing its breakdown of customer-completed and sales rep surveys on hover" loading="lazy">
+        </div>
+        <p class="mock-caption">Hover Generated by AI for the split between customer and rep surveys.</p>
+        <div class="section-cta"><span>See your own numbers on a dashboard built for them.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-74 + HS-88 + HS-86 -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Also in September</p>
+        <h2>Co-Reviews You Can Find, and Photos That Save</h2>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">👥</span>
+                <h4>Review Together Badge</h4>
+                <p>Surveys you co-reviewed with the customer carry a badge on the survey list, with a filter to show only those. Expand the row for the date of the most recent session.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">🖼️</span>
+                <h4>Uploaded Photos Save</h4>
+                <p>Photos you upload onto an item yourself now save reliably.</p>
+            </div>
+        </div>
+        <p>The Review Together filter is the useful half of that first one. Once co-review becomes something you do on the deals that matter, the survey list is where you go to find which ones those were.</p>
+        <div class="shot">
+            <img src="/articles/img/sep-review-together-filter.webp" width="1600" height="599" alt="The survey list filtered to Review Together surveys only, each row carrying a Review Together badge, with one row expanded to show the latest session date" loading="lazy">
+        </div>
+        <p class="mock-caption">The switch narrows the list to co-reviewed surveys. Expand a row for the latest session date.</p>
+        <div class="note-callout"><strong>Note:</strong> the Review Together badge and filter are in HomeSurvey.ai standalone.</div>
+        <div class="section-cta"><span>Try Review Together on your next big quote.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Stop rebuilding your own survey by hand.</h3>
+        <p>Run a survey, export it to Excel, and hand the crew a sheet that already has the pictures in it. Your first 10 surveys are on us.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &middot; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>

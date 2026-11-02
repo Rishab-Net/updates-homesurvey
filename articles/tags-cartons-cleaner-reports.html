@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags That Stick. Cartons You Can See Into. | Product Updates | HomeSurvey.ai</title>
+    <meta name="description" content="Hide or delete every excluded item in one step, custom tags that last for the whole survey, tag tooltips, photos in tag summaries, editable carton items, and a calmer review screen.">
+    <link rel="canonical" href="https://updates.homesurvey.ai/articles/tags-cartons-cleaner-reports/">
+    <meta property="og:title" content="Tags That Stick. Cartons You Can See Into. | HomeSurvey.ai Product Update">
+    <meta property="og:description" content="Hide or delete every excluded item in one step, custom tags that last for the whole survey, tag tooltips, photos in tag summaries, editable carton items, and a calmer review screen.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://updates.homesurvey.ai/articles/tags-cartons-cleaner-reports/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/article-styles.css?v=20260518">
+    <style>
+        /* ── Hard-coded overrides — guarantees rendering regardless of CSS variable resolution ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #4A5565; background: #fff; line-height: 1.7; }
+        a { color: #7C3AED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .site-header { background-color: #1E1145 !important; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .back-link { color: rgba(255,255,255,0.7) !important; font-size: 0.875rem; transition: color 0.2s; }
+        .site-header .back-link:hover { color: #fff !important; text-decoration: none; }
+
+        .article-hero { background-color: #1E1145 !important; color: #fff !important; padding: 40px 24px 52px; text-align: center; }
+        .article-hero .meta { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .article-hero h1 { color: #fff !important; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+        .article-hero .tagline { font-size: 1.1rem; color: rgba(255,255,255,0.75) !important; max-width: 660px; margin: 0 auto; }
+        .article-hero .date { font-size: 0.85rem; color: rgba(255,255,255,0.55) !important; }
+
+        .type-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+        .type-badge.Feature { background-color: #7C3AED !important; }
+        .type-badge.Improvement { background-color: #2563EB !important; }
+        .type-badge.roundup, .type-badge.customer { background-color: #F59E0B !important; color: #1E1145 !important; }
+
+        .article-body { max-width: 720px !important; margin: 0 auto !important; padding: 48px 24px 64px !important; }
+        .article-body > p, .article-section > p { font-size: 1rem; line-height: 1.7; color: #4A5565; margin-bottom: 16px; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #101828; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 700; color: #101828; margin: 32px 0 12px; }
+
+        .article-section { margin-bottom: 48px; }
+        .article-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 0.72rem !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #7C3AED !important; margin-bottom: 8px !important; display: block; }
+        .section-divider { width: 48px; height: 3px; background-color: #7C3AED; border-radius: 2px; margin: 0 0 24px; display: block; }
+
+        .anaphora { margin: 0 0 20px; }
+        .anaphora p { margin: 0 0 6px; font-size: 1.1rem; color: #101828; line-height: 1.45; }
+        .anaphora p.climax { font-weight: 700; color: #7C3AED; font-size: 1.2rem; margin-top: 4px; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+        .feature-card { background-color: #F4F4F7; border-radius: 12px; padding: 22px 20px; border-left: 3px solid transparent; }
+        .feature-card.purple { border-left-color: #7C3AED; }
+        .feature-card.orange { border-left-color: #F59E0B; }
+        .feature-card.green  { border-left-color: #059669; }
+        .feature-card.blue   { border-left-color: #2563EB; }
+        .feature-card-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+        .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: #101828; margin: 0 0 6px; }
+        .feature-card p { font-size: 0.87rem; color: #4A5565; line-height: 1.55; margin: 0; }
+
+        /* Product screenshots */
+        .shot { margin: 24px auto 12px; }
+        .shot img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1.5px solid #e2e8f0; box-shadow: 0 12px 40px rgba(30,17,69,0.14); }
+        .shot.phone img { max-width: 320px; margin: 0 auto; }
+        .mock-caption { font-size: 0.85rem; color: #94a3b8; text-align: center; margin: 8px 0 0; }
+
+        .note-callout { background-color: #FBF7FF; border: 1.5px solid #DDD6FE; border-radius: 12px; padding: 14px 18px; font-size: 0.88rem; color: #4A5565; margin-top: 16px; }
+        .note-callout strong { color: #6D28D9; }
+
+        .article-cta { text-align: center; padding: 48px 24px; background-color: #F4F4F7; border-radius: 16px; margin-top: 48px; }
+        .article-cta h3 { font-size: 1.3rem; color: #101828; margin-bottom: 12px; font-weight: 700; }
+        .article-cta p { color: #4A5565; margin-bottom: 20px; font-size: 0.95rem; }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; background-color: #7C3AED; color: #fff !important; padding: 14px 28px; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.2s; text-decoration: none !important; }
+        .btn-cta:hover { background-color: #5B21B6; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); text-decoration: none !important; }
+        .btn-cta svg { width: 18px; height: 18px; }
+
+        .section-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 24px; padding: 14px 18px; background-color: #F3EEFF; border-radius: 12px; }
+        .section-cta span { font-size: 0.9rem; color: #101828; font-weight: 600; }
+        .section-cta a { display: inline-flex; align-items: center; background-color: #7C3AED; color: #fff !important; padding: 9px 18px; border-radius: 50px; font-size: 0.88rem; font-weight: 600; text-decoration: none !important; white-space: nowrap; }
+        .section-cta a:hover { background-color: #5B21B6; }
+        .fix-list { list-style: none; margin: 8px 0 0; }
+        .fix-list li { position: relative; padding: 10px 0 10px 28px; border-bottom: 1px solid #EEF0F4; font-size: 0.95rem; color: #4A5565; }
+        .fix-list li:last-child { border-bottom: none; }
+        .fix-list li::before { content: '\2713'; position: absolute; left: 4px; top: 10px; color: #059669; font-weight: 700; }
+        .fix-list strong { color: #101828; }
+
+        .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+        .site-footer a { color: #7C3AED; }
+
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .article-body { padding: 32px 16px 48px !important; }
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="site-header" style="background-color:#1E1145;">
+    <a class="logo" href="https://homesurvey.ai"><img src="/articles/img/219dbb39-18f3-832c-9faf-f3bfdbeee8b1.png" alt="HomeSurvey.ai" height="90"></a>
+    <a class="back-link" href="/" style="color:rgba(255,255,255,0.7);">&larr; All Updates</a>
+</header>
+
+<section class="article-hero" style="background-color:#1E1145;color:#fff;">
+    <div class="meta">
+        <span class="type-badge Feature">Feature</span>
+        <span class="type-badge customer">Customer-Driven</span>
+        <span class="date">October 17, 2026</span>
+    </div>
+    <h1>Tags That Stick. Cartons You Can See Into.</h1>
+    <p class="tagline">Clear out excluded items in one step, write a custom tag once for the whole survey, put photos in your tag summaries, and edit what goes into your cartons.</p>
+</section>
+
+<article class="article-body">
+    <!-- HS-135 BULK EXCLUDED -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Built From a Customer&rsquo;s Notes</p>
+        <h2>Clear Out Excluded Items in One Step</h2>
+        <p>Most of this release came straight from one mover&rsquo;s feedback list. The first item on it: when items aren&rsquo;t coming on the move, he was deleting them from the report one at a time so the customer wouldn&rsquo;t be confused by them.</p>
+        <p>Now it is one action for all of them. Open the <strong>&#8942;</strong> menu on the <strong>Excluded</strong> tile at the top of the survey and choose <strong>Hide excluded from report</strong>, or <strong>Delete all excluded items</strong>. Same end state as before, without the clicking.</p>
+        <div class="shot">
+            <img src="/articles/img/oct-bulk-excluded.webp" width="534" height="326" alt="The bulk action for excluded items, offering to hide all excluded items from the report or delete them all from the dashboard" loading="lazy">
+        </div>
+        <p class="mock-caption">Hide them from the customer's copy, or remove them outright. Your call, one click.</p>
+        <div class="section-cta"><span>Hand your next customer a report without the clutter.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-136 / HS-137 / HS-138 TAGS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Tags</p>
+        <h2>Tags That Stick Around and Explain Themselves</h2>
+        <p><strong>Custom tags now last for the whole survey.</strong> Type a custom tag once, with its note, and it shows up as an option on every other item in that survey. No more retyping the same tag on item after item. If you genuinely want it on just one item, tick <em>This item only</em>.</p>
+        <div class="shot">
+            <img src="/articles/img/oct-custom-tag-create.webp" width="998" height="1582" alt="Creating a custom tag with a name, a description and an only this item checkbox" loading="lazy">
+        </div>
+        <p class="mock-caption">Write the tag once. It is there for every item in the survey.</p>
+        <p><strong>Every tag tells you what it means.</strong> Hover over a tag and a one-line description appears, so a new rep reading a survey for the first time knows what each one is asking for. Fragile, for example, reads <em>Breakable, pack with extra padding</em>. Custom tags get a description field too.</p>
+        <div class="shot">
+            <img src="/articles/img/oct-tag-tooltip.webp" width="1600" height="194" alt="A tag on an item showing its one-line description on hover" loading="lazy">
+        </div>
+        <p class="mock-caption">One line, not a paragraph.</p>
+        <p><strong>Tag summaries can carry photos.</strong> The tag summary tables from September can now show each item&rsquo;s photo beside it. Switch on <em>Include item photos</em> in the Tag summary settings. It is off by default, so the report stays lean unless you ask for it. This one was asked for by the owner of a moving company.</p>
+        <div class="shot">
+            <img src="/articles/img/oct-tag-summary-photos-toggle.webp" width="980" height="854" alt="The Tag summary settings with Include item photos switched on" loading="lazy">
+        </div>
+        <p class="mock-caption">Off by default. On when the customer needs to see what they are deciding about.</p>
+        <div class="shot">
+            <img src="/articles/img/oct-pdf-tag-summary-photos.webp" width="1378" height="1203" alt="A tag summary table in the PDF with a photo thumbnail beside each item" loading="lazy">
+        </div>
+        <p class="mock-caption">The same total, now with a picture of every item in it.</p>
+        <div class="section-cta"><span>Tag a survey your way, once.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-139 / HS-141 / HS-142 CARTONS -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Cartons</p>
+        <h2>See Inside the Carton</h2>
+        <p>Cartonable items, the lamps, framed art and other pieces that get packed into a carton, used to be read-only in the review screen. They got two upgrades:</p>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">🔲</span>
+                <h4>See What the AI Matched</h4>
+                <p>The item&rsquo;s detected outline is drawn on its source photo, so you see exactly which part of the frame the AI matched instead of scanning the whole picture.</p>
+            </div>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">✏️</span>
+                <h4>Edit the Numbers</h4>
+                <p>Ship and exclude quantities, volume and weight are now editable on cartonable items, and the exclude quantity shows next to ship quantity instead of being hidden.</p>
+            </div>
+        </div>
+        <div class="shot">
+            <img src="/articles/img/oct-carton-bbox.webp" width="854" height="975" alt="A table lamp packed in a lamp carton, with editable ship, exclude, volume and weight, and the AI's detected outline drawn on its source photo" loading="lazy">
+        </div>
+        <p class="mock-caption">Editable numbers on top, the AI's outline on the photo below.</p>
+        <div class="section-cta"><span>Run your next survey with cartons you can see into.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-118 / HS-119 / HS-120 / HS-123 / HS-130 -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Smaller Things That Add Up</p>
+        <h2>A Calmer Review Screen</h2>
+        <div class="feature-grid">
+            <div class="feature-card purple">
+                <span class="feature-card-icon">🧾</span>
+                <h4>Ship and Exclude in the Panel</h4>
+                <p>Edit ship and exclude quantities right in the item detail panel, next to volume, weight, size, color and material. No trip back to the row.</p>
+            </div>
+            <div class="feature-card blue">
+                <span class="feature-card-icon">📂</span>
+                <h4>A More Menu That Says What It Does</h4>
+                <p>Room notes sit on their own, with survey-wide actions grouped under <em>Survey</em>, <em>Export as</em> and <em>PDF report</em>. Reset to AI capture now says <em>all rooms</em> and asks before it runs.</p>
+            </div>
+            <div class="feature-card green">
+                <span class="feature-card-icon">🔢</span>
+                <h4>&ldquo;No Links Sent&rdquo; Instead of 0%</h4>
+                <p>If you upload media yourself and never send customer links, Survey Conversion now says <em>No links sent</em> instead of a misleading 0%.</p>
+            </div>
+            <div class="feature-card orange">
+                <span class="feature-card-icon">🏷️</span>
+                <h4>Clearer Labels</h4>
+                <p>The walkthrough sort is now called <em>Capture Order</em>, and the Excluded tile has a visible info icon for its explanation.</p>
+            </div>
+        </div>
+        <div class="shot">
+            <img src="/articles/img/oct-item-panel-ship-exclude.webp" width="854" height="1010" alt="The item detail panel with ship and exclude quantities editable alongside volume and weight" loading="lazy">
+        </div>
+        <p class="mock-caption">Everything about the item, editable in one place.</p>
+        <div class="shot phone">
+            <img src="/articles/img/oct-more-menu-grouped.webp" width="462" height="872" alt="The More menu with Room notes on its own, then Survey, Export as and PDF report sections" loading="lazy">
+        </div>
+        <p class="mock-caption">Room actions and survey actions, finally labelled.</p>
+        <div class="section-cta"><span>Review your next survey on the cleaner screen.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+    <!-- HS-113 / HS-114 / HS-115 / HS-116 / HS-104 / HS-98 / HS-143 -->
+    <div class="article-section">
+        <div class="section-divider"></div>
+        <p class="section-label">Fixed</p>
+        <h2>Bugs We Squashed</h2>
+        <ul class="fix-list">
+            <li><strong>Save Draft just saves.</strong> It no longer opens the Review Complete window, which belongs to Complete Review only.</li>
+            <li><strong>Reset to AI capture is clean.</strong> No more duplicate rows after a reset, and the item counts in the header, Items tab, list and sidebar all agree.</li>
+            <li><strong>Sorting inside a room makes sense.</strong> &ldquo;Room&rdquo; is no longer offered as a sort option when you are already looking at a single room.</li>
+            <li><strong>One button less.</strong> The room header&rsquo;s Walkthrough button, which only flipped between frame and video, is gone.</li>
+            <li><strong>Voice notes show once.</strong> A voice note could appear twice on the same survey. Fixed.</li>
+            <li><strong>Carton capacity reads true.</strong> Used capacity now shows values over 100% instead of stopping at 100.</li>
+        </ul>
+        <div class="section-cta"><span>Survey on the version with these already fixed.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="article-cta">
+        <h3>Built from what movers asked for.</h3>
+        <p>Every change here started as a note from a mover using HomeSurvey.ai. Start your own surveys and your first 10 are on us.</p>
+        <a class="btn-cta" href="https://go.homesurvey.ai/signup">
+            Start Your Free Trial
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+    </div>
+
+</article>
+
+<footer class="site-footer">
+    &copy; 2026 <a href="https://homesurvey.ai">HomeSurvey.ai</a> &middot; AI-Powered Virtual Moving Surveys
+</footer>
+
+</body>
+</html>
