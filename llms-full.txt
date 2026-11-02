@@ -46,12 +46,12 @@ A customer-driven release built largely from one mover's feedback list: faster c
 ---
 
 ## Improvement: The Photo Comes With It (September 2026 Roundup)
-**Released:** September 15, 2026 (Excel export); survey outcome, statistics, Review Together badge and the upload fix shipped September 1, 2026
+**Released:** September 15, 2026 (Excel export); survey outcome, statistics, Review Together badge, link expiry and the upload fix shipped September 1, 2026
 **Type:** Improvement
 **URL:** https://updates.homesurvey.ai/articles/september-2026-roundup/
 
 ### Overview
-A September batch led by an Excel export with item photos, plus survey outcome tracking, clearer dashboard statistics, a Review Together badge, and an upload fix.
+A September batch led by an Excel export with item photos, plus survey outcome tracking, clearer dashboard statistics, a Review Together badge, link expiry with credit refund, and an upload fix.
 
 ### Excel Export With Photos
 - More > Export as > Excel (with photos), next to the existing CSV export, builds an .xlsx file with one row per item and the item's photo embedded in the row.
@@ -74,6 +74,9 @@ A September batch led by an Excel export with item photos, plus survey outcome t
 ### Review Together Badge (HomeSurvey.ai standalone)
 - Surveys with one or more completed Review Together sessions show a badge on the survey list.
 - A "Review Together surveys only" filter narrows the list to those surveys; expanding a row shows the latest session date.
+
+### Link Expiry and Credit Refund (HomeSurvey.ai standalone)
+- A survey link that is never used expires after 30 days instead of staying open indefinitely, and the credit deducted when the link was generated is refunded.
 
 ### Fix
 - Manually uploaded item photos now save reliably.
