@@ -7,6 +7,30 @@ HomeSurvey.ai is an AI-powered virtual home survey platform for the moving indus
 
 ---
 
+## Improvement: The Customer Said It. The Survey Counts It. (November 2026)
+**Released:** November 24, 2026
+**Type:** Improvement (Customer-Driven)
+**URL:** https://updates.homesurvey.ai/articles/customer-words-ai-surveys/
+**Background:** https://homesurvey.ai/blogs/blog-mover-feedback-ai-surveys/
+
+### Overview
+This release changes how an AI survey treats what the customer tells the mover, and how it handles items that should not be counted twice or should not ship at all. It came from a moving company owner who reviewed two AI surveys on a screen recording, out loud, row by row.
+
+### What Changed
+- The customer's words decide what ships. If a customer is not sure about an item, or is trying to sell it, it shows on its own line and stays out of the confirmed total. A count the customer says out loud is the count the survey uses.
+- What the customer types counts too. A note typed in the app, such as "Fridge stays", now works like a spoken one.
+- One item, counted once. An item seen from two rooms, or a room uploaded twice, is counted once.
+- Built-ins are marked, not shipped. A kitchen island or a closet's own shelving is set aside with a note to confirm with the customer.
+
+### What Reviewers See
+- Items the customer is unsure about sit on their own line.
+- Rows the survey set aside carry a short note saying why, so the estimator can confirm with the customer in one call.
+
+### Suggested Check
+Open a survey's video and look at three rows: the largest item, one item the customer talked about, and one item in a closet or garage. Check that each is counted once and at the right size.
+
+---
+
 ## Feature: Tags That Stick. Cartons You Can See Into. (October 2026)
 **Released:** October 17, 2026
 **Type:** New Feature (Customer-Driven)

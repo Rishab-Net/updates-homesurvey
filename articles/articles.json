@@ -1,5 +1,35 @@
 [
   {
+    "slug": "customer-words-ai-surveys",
+    "title": "The Customer Said It. The Survey Counts It.",
+    "tagline": "Our latest release changes how an AI survey treats what your customer tells you, and how it handles items that should not be counted twice or should not ship at all.",
+    "type": "Improvement",
+    "secondaryType": "Customer-Driven",
+    "publishedAt": "2026-11-24T10:00:00-05:00",
+    "published": true,
+    "keywords": [
+      "AI moving survey",
+      "AI survey",
+      "accuracy",
+      "customer words",
+      "voice notes",
+      "typed notes",
+      "not sure",
+      "for sale",
+      "confirmed total",
+      "spoken count",
+      "duplicate detection",
+      "counted once",
+      "built-ins",
+      "kitchen island",
+      "closet shelving",
+      "set aside",
+      "customer-driven",
+      "improvement"
+    ],
+    "summary": "A customer-driven November release for HomeSurvey.ai AI surveys. Items the customer is unsure about, or is selling, show on their own line and stay out of the confirmed total; a count the customer says out loud is the count the survey uses. Notes typed in the app (e.g. \"Fridge stays\") work like spoken ones. An item seen from two rooms, or a room uploaded twice, is counted once. Built-ins such as a kitchen island or a closet's own shelving are set aside with a note to confirm with the customer."
+  },
+  {
     "slug": "tags-cartons-cleaner-reports",
     "title": "Tags That Stick. Cartons You Can See Into.",
     "tagline": "Clear out excluded items in one step, write a custom tag once for the whole survey, put photos in your tag summaries, and see inside every carton.",
