@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What&rsquo;s new in HomeSurvey.ai AI surveys: the customer&rsquo;s words count | Product Updates | HomeSurvey.ai</title>
+    <title>AI survey update: the customer&rsquo;s words count | HomeSurvey.ai</title>
     <meta name="description" content="The latest HomeSurvey.ai release: what changes in your AI surveys, and one check to run on your next survey.">
     <link rel="canonical" href="https://updates.homesurvey.ai/articles/customer-words-ai-surveys/">
-    <meta property="og:title" content="What&rsquo;s new in HomeSurvey.ai AI surveys: the customer&rsquo;s words count | HomeSurvey.ai Product Update">
+    <meta property="og:title" content="AI survey update: the customer&rsquo;s words count | HomeSurvey.ai">
     <meta property="og:description" content="The latest HomeSurvey.ai release: what changes in your AI surveys, and one check to run on your next survey.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://updates.homesurvey.ai/articles/customer-words-ai-surveys/">
+    <meta property="og:image" content="https://updates.homesurvey.ai/articles/img/og/customer-words-ai-surveys.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI survey update: the customer&rsquo;s words count | HomeSurvey.ai">
+    <meta name="twitter:description" content="The latest HomeSurvey.ai release: what changes in your AI surveys, and one check to run on your next survey.">
+    <meta name="twitter:image" content="https://updates.homesurvey.ai/articles/img/og/customer-words-ai-surveys.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -89,6 +96,19 @@
         .site-footer { border-top: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
         .site-footer a { color: #7C3AED; }
 
+        /* Line icons on feature cards */
+        .feature-card-icon svg { width: 26px; height: 26px; display: block; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .feature-card.purple .feature-card-icon svg { stroke: #7C3AED; }
+        .feature-card.blue .feature-card-icon svg { stroke: #2563EB; }
+        .feature-card.green .feature-card-icon svg { stroke: #059669; }
+        .feature-card.orange .feature-card-icon svg { stroke: #D97706; }
+
+        /* Numbered check */
+        .check-steps { list-style: none; counter-reset: step; margin: 4px 0 18px; }
+        .check-steps li { counter-increment: step; position: relative; padding: 12px 0 12px 44px; border-bottom: 1px solid #EEF0F4; font-size: 1rem; color: #101828; font-weight: 600; }
+        .check-steps li:last-child { border-bottom: none; }
+        .check-steps li::before { content: counter(step); position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background-color: #F3EEFF; color: #7C3AED; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+
         @media (max-width: 600px) {
             .feature-grid { grid-template-columns: 1fr; }
             .article-body { padding: 32px 16px 48px !important; }
@@ -120,26 +140,27 @@
         <h2>What Changed</h2>
         <div class="feature-grid">
             <div class="feature-card purple">
-                <span class="feature-card-icon">🗣️</span>
+                <span class="feature-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>
                 <h4>The customer&rsquo;s words decide what ships.</h4>
                 <p>If a customer is not sure about an item, or is trying to sell it, it shows on its own line and stays out of the confirmed total. A count the customer says out loud is the count the survey uses.</p>
             </div>
             <div class="feature-card blue">
-                <span class="feature-card-icon">⌨️</span>
+                <span class="feature-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01"/><path d="M7 14h10"/></svg></span>
                 <h4>What the customer types counts too.</h4>
                 <p>A note typed in the app, such as &ldquo;Fridge stays&rdquo;, now works like a spoken one.</p>
             </div>
             <div class="feature-card green">
-                <span class="feature-card-icon">1️⃣</span>
+                <span class="feature-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M4 16V5a2 2 0 0 1 2-2h11"/><path d="m11.5 14.5 2 2 4-4"/></svg></span>
                 <h4>One item, counted once.</h4>
                 <p>An item seen from two rooms, or a room uploaded twice, is counted once.</p>
             </div>
             <div class="feature-card orange">
-                <span class="feature-card-icon">🏠</span>
+                <span class="feature-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9.5 11v2M14.5 11v2"/></svg></span>
                 <h4>Built-ins are marked, not shipped.</h4>
                 <p>A kitchen island or a closet&rsquo;s own shelving is set aside with a note to confirm with the customer.</p>
             </div>
         </div>
+        <div class="section-cta"><span>Run your next survey on this release.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
     </div>
 
     <div class="article-section">
@@ -153,8 +174,15 @@
         <div class="section-divider"></div>
         <p class="section-label">Try It</p>
         <h2>One Check to Run on Your Next Survey</h2>
-        <p>Open the video and look at three rows: the largest item, one item the customer talked about, and one item in a closet or garage. Check that each is counted once and at the right size. If anything looks off, <a href="mailto:support@homesurvey.ai">tell us</a>. Your feedback goes straight into the next release.</p>
+        <p>Open the video and look at three rows:</p>
+        <ol class="check-steps">
+            <li>The largest item</li>
+            <li>One item the customer talked about</li>
+            <li>One item in a closet or garage</li>
+        </ol>
+        <p>Check that each is counted once and at the right size. If anything looks off, <a href="mailto:support@homesurvey.ai">tell us</a>. Your feedback goes straight into the next release.</p>
         <div class="note-callout"><strong>The story behind this release.</strong> One mover reviewed two of our AI surveys out loud, row by row. <a href="https://homesurvey.ai/blogs/blog-mover-feedback-ai-surveys/">Read what his red pen taught us &rarr;</a></div>
+        <div class="section-cta"><span>Run the three-row check on a survey of your own.</span><a href="https://go.homesurvey.ai/signup">Start free, first 10 surveys on us</a></div>
     </div>
 
 
